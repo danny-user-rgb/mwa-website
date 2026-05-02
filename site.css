@@ -33,13 +33,7 @@ body {
   background: var(--white);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
-  opacity: 0;
-  transition: opacity 0.4s ease;
 }
-body.ready { opacity: 1; }
-
-/* ── Page transition ── */
-body.fade-out { opacity: 0 !important; transition: opacity 0.25s ease !important; }
 
 /* ── Wrappers ── */
 .wrap    { max-width: 1160px; margin: 0 auto; padding: 0 var(--wrap-pad); }
@@ -98,10 +92,10 @@ body.fade-out { opacity: 0 !important; transition: opacity 0.25s ease !important
 .nav-links a:hover, .nav-links a.active { color: var(--navy); }
 .nav-links a.active::after, .nav-links a:hover::after { width: 100%; }
 .nav-cta {
-  padding: 8px 18px !important; border: 1px solid var(--navy) !important;
-  color: var(--navy) !important; transition: all 0.25s !important;
+  padding: 8px 18px !important; border: 1px solid var(--gold) !important;
+  color: var(--gold) !important; transition: all 0.25s !important;
 }
-.nav-cta:hover, .nav-cta.active { background: var(--navy) !important; color: var(--white) !important; }
+.nav-cta:hover, .nav-cta:active, .nav-cta.active { background: var(--gold) !important; color: var(--navy) !important; }
 .nav-cta::after, .nav-cta.active::after { display: none !important; }
 
 .hamburger {

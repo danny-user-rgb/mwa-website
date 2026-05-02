@@ -3,11 +3,6 @@
    ============================================================ */
 
 (function () {
-  // ── Fade in on load ──
-  document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => document.body.classList.add('ready'), 30);
-  });
-
   // ── Nav scroll shadow ──
   const nav = document.getElementById('nav');
   if (nav) {
@@ -38,19 +33,6 @@
       if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('on');
     });
   }, 60);
-
-  // ── Page transitions ──
-  document.addEventListener('click', e => {
-    const a = e.target.closest('a[href]');
-    if (!a) return;
-    const href = a.getAttribute('href');
-    if (!href || href.startsWith('#') || href.startsWith('mailto:') ||
-        href.startsWith('tel:') || href.startsWith('http') ||
-        a.target === '_blank') return;
-    e.preventDefault();
-    document.body.classList.add('fade-out');
-    setTimeout(() => { location.href = href; }, 260);
-  });
 
   // ── Mobile nav ──
   window.openMob  = () => document.getElementById('mobNav')?.classList.add('open');
