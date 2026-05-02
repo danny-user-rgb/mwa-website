@@ -43,8 +43,9 @@
 }
 .hero-btns { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
 .hero-scroll {
-  position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+  position: absolute; bottom: clamp(16px, 3vw, 32px); left: 50%; transform: translateX(-50%);
   display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 0 16px; width: max-content;
 }
 .hero-scroll span { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-lt); }
 .scroll-line { width: 1px; height: 30px; background: linear-gradient(to bottom, var(--gold), transparent); animation: pulse 2s ease infinite; }
@@ -100,7 +101,6 @@
 .testi-card {
   text-align: center; max-width: 680px; margin: 0 auto;
 }
-.testi-q  { font-family: var(--serif); font-size: 72px; color: var(--gold); line-height: 0.5; margin-bottom: 16px; opacity: 0.2; }
 .testi-t  { font-family: var(--serif); font-size: clamp(17px,2.2vw,21px); font-weight: 300; font-style: italic; color: var(--navy); line-height: 1.72; margin-bottom: 24px; }
 .testi-name { font-size: 12px; font-weight: 500; color: var(--navy); letter-spacing: 0.8px; }
 .testi-div  { width: 22px; height: 1px; background: var(--gold); margin: 10px auto; }
@@ -130,7 +130,7 @@
 }
 </style>
 <link id="gfont-Inter" rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"></head>
-<body class="ready" style="font-family: Inter;">
+<body style="font-family: Inter;">
 
 <div class="mob-nav" id="mobNav">
   <button class="mob-close" onclick="closeMob()">×</button>
@@ -174,24 +174,25 @@
 <section class="hero">
   <div class="hero-inner">
     <h1>Bespoke Miami-Based<br><em>Wealth Management Firm</em></h1>
-    <p class="hero-sub">Guiding affluent families and entrepreneurs through the complexities of wealth — with the care and precision of a trusted wealth advisor.</p>
+    <p class="hero-sub">Independent fiduciary wealth management for high-net-worth families and entrepreneurs in Miami.</p>
     <div class="hero-btns">
-      <a href="services.html" class="btn btn-dark">Our Services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      <a href="#what-we-do" class="btn btn-dark">Our Services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
       <a href="about.html" class="btn btn-ghost">Learn About Us</a>
     </div>
   </div>
   <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+
 </section>
 
 <!-- Italic intro strip -->
 <div class="intro-strip">
   <div class="wrap">
-    <p class="rev">"We are dedicated to understanding your vision, nurturing your legacy, and growing your wealth through <em>exceptional, personalized care.</em>"</p>
+    <p class="rev">We are dedicated to understanding your vision, nurturing your legacy, and growing your wealth through <em>exceptional, personalized care.</em></p>
   </div>
 </div>
 
 <!-- Services preview -->
-<section class="sec">
+<section class="sec" id="what-we-do">
   <div class="wrap">
     <div style="text-align:center; margin-bottom:clamp(36px,5vw,56px);">
       <div class="label lc rev">What We Do</div>
@@ -229,9 +230,6 @@
         <p>Planning for the selling or transferring of a business is an important factor to plan for, to ensure your ultimate goals are attained.</p>
       </a>
     </div>
-    <div style="text-align:center; margin-top:clamp(32px,5vw,48px);" class="rev">
-      <a href="services.html" class="btn btn-dark">View All Services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
-    </div>
   </div>
 </section>
 
@@ -252,9 +250,6 @@
         <p class="body-t">Founded in 2005 as a boutique family office, Maredin Wealth Advisors has grown into an independent investment advisor serving high-net-worth individuals, families, and entrepreneurs across Miami and beyond.</p>
         <div class="divider"></div>
         <p class="body-t">As a fiduciary, our loyalty rests solely with our clients — free from institutional conflicts of interest. We combine value investing principles with adaptive macro strategies to protect and grow your wealth for generations.</p>
-        <div style="margin-top:28px;">
-          <a href="about.html" class="btn btn-dark">Our Story <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
-        </div>
       </div>
     </div>
   </div>
@@ -318,8 +313,7 @@
 <section class="sec sec-cream">
   <div class="wrap-sm">
     <div class="testi-card rev">
-      <div class="testi-q">“</div>
-      <p class="testi-t">What makes Maredin unique is Marcelo's personal attention, understanding, and advocacy for your specific situation. He genuinely cares about your life and wellbeing — and offers recommendations tailored to reach your life goals.</p>
+      <p class=”testi-t”>What makes Maredin unique is Marcelo's personal attention, understanding, and advocacy for your specific situation. He genuinely cares about your life and wellbeing — and offers recommendations tailored to reach your life goals.</p>
       <div class="testi-name">Cindy G.</div>
       <div class="testi-div"></div>
       <div class="testi-role">Client</div>
