@@ -1,0 +1,2016 @@
+
+<!DOCTYPE html>
+<!-- Maredin Wealth Advisors - Updated Feb 2026 -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maredin Wealth Advisors | Independent Fiduciary | Miami</title>
+<meta name="description" content="Bespoke Miami-based wealth management firm. Independent, fiduciary, focused. Guiding affluent families and entrepreneurs through the complexities of wealth.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy: #0a1628;
+  --navy-light: #132038;
+  --midnight: #0d1f3c;
+  --teal: #1a5c6b;
+  --teal-light: #237a8c;
+  --gold: #c9a96e;
+  --gold-light: #dfc291;
+  --cream: #faf8f5;
+  --warm-white: #f5f2ed;
+  --text-dark: #1a1a2e;
+  --text-medium: #4a4a5a;
+  --text-light: #7a7a8a;
+  --white: #ffffff;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--sans);
+  color: var(--text-dark);
+  background: var(--white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ========== UTILITY ========== */
+.container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+.container-narrow { max-width: 900px; margin: 0 auto; padding: 0 40px; }
+.container-wide { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+@keyframes lineGrow {
+  from { width: 0; }
+  to { width: 60px; }
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.45s; }
+.delay-4 { transition-delay: 0.6s; }
+
+/* ========== NAV ========== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  padding: 24px 0;
+  transition: all 0.4s ease;
+  background: transparent;
+}
+.nav.scrolled {
+  background: rgba(10, 22, 40, 0.95);
+  backdrop-filter: blur(20px);
+  padding: 16px 0;
+  box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+}
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-decoration: none;
+}
+.nav-logo-icon {
+  width: 47px;
+  height: 47px;
+}
+.nav-logo-icon svg { width: 100%; height: 100%; }
+.nav-logo-text {
+  font-family: var(--serif);
+  font-size: 29px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+}
+.nav-logo-text span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 3px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.leader-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+.nav-links a:hover { color: var(--white); }
+.nav-links a:hover::after { width: 100%; }
+.nav-cta {
+  font-family: var(--sans) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  padding: 10px 24px;
+  border: 1px solid var(--gold);
+  color: var(--gold) !important;
+  letter-spacing: 1.5px !important;
+  transition: all 0.3s ease !important;
+}
+.nav-cta:hover {
+  background: var(--gold);
+  color: var(--navy) !important;
+}
+.nav-cta::after { display: none !important; }
+
+/* Mobile menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
+}
+.hamburger span {
+  width: 24px;
+  height: 1.5px;
+  background: var(--white);
+  transition: all 0.3s;
+}
+
+/* ========== HERO ========== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--navy);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--midnight) 50%, #0f2847 100%);
+}
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?w=1920&q=80') center/cover;
+  opacity: 0.12;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 30% 50%, rgba(26, 92, 107, 0.15) 0%, transparent 60%),
+              radial-gradient(ellipse at 70% 80%, rgba(201, 169, 110, 0.08) 0%, transparent 50%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 900px;
+  padding: 0 40px;
+  animation: fadeInUp 1.2s ease;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 28px;
+  border: 1px solid rgba(201, 169, 110, 0.3);
+  border-radius: 100px;
+  margin-bottom: 40px;
+  animation: fadeIn 1s ease 0.3s both;
+}
+.hero-badge-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 50%;
+}
+.hero-badge span {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 28px;
+  letter-spacing: -0.5px;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--gold-light);
+}
+.hero-sub {
+  font-family: var(--sans);
+  font-size: 19px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+  max-width: 640px;
+  margin: 0 auto 48px;
+  animation: fadeInUp 1s ease 0.5s both;
+}
+.hero-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  animation: fadeInUp 1s ease 0.7s both;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  background: var(--gold);
+  color: var(--navy);
+  text-decoration: none;
+  transition: all 0.4s ease;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,169,110,0.3); }
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 16px 40px;
+  background: transparent;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+.btn-secondary:hover { color: var(--white); border-color: rgba(255,255,255,0.5); }
+
+.hero-scroll {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  animation: fadeIn 1s ease 1.2s both;
+}
+.hero-scroll span {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.3);
+}
+.scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  animation: scrollPulse 2s ease infinite;
+}
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* ========== TRUST BAR ========== */
+.trust-bar {
+  padding: 48px 0;
+  background: var(--white);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.trust-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.trust-item svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+}
+.trust-item span {
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--text-medium);
+}
+
+/* ========== SECTION STYLES ========== */
+.section-label {
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 300;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 24px;
+  letter-spacing: -0.3px;
+}
+.section-title em { font-style: italic; }
+.section-title.light { color: var(--white); }
+.section-desc {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-medium);
+  line-height: 1.8;
+  max-width: 600px;
+}
+.section-desc.light { color: rgba(255,255,255,0.6); }
+
+/* ========== INTRO / ABOUT SECTION ========== */
+.about {
+  padding: 140px 0;
+  background: var(--cream);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+.about-image {
+  position: relative;
+}
+.about-image-main {
+  width: 100%;
+  aspect-ratio: 4/5;
+  object-fit: cover;
+  border-radius: 2px;
+  filter: brightness(0.95);
+}
+.about-image-accent {
+  position: absolute;
+  bottom: -30px;
+  right: -30px;
+  width: 60%;
+  aspect-ratio: 3/2;
+  object-fit: cover;
+  border: 6px solid var(--cream);
+  border-radius: 2px;
+}
+.about-stat {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  background: var(--navy);
+  padding: 28px 32px;
+  text-align: center;
+}
+.about-stat-num {
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+}
+.about-stat-label {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin-top: 6px;
+}
+.about-content { }
+.about-text {
+  font-size: 18px;
+  font-weight: 300;
+  color: var(--text-medium);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+.about-divider {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 32px 0;
+}
+.btn-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--navy);
+  text-decoration: none;
+  margin-top: 12px;
+  transition: gap 0.3s;
+}
+.btn-text:hover { gap: 16px; }
+.btn-text svg { width: 18px; height: 18px; transition: transform 0.3s; }
+.btn-text:hover svg { transform: translateX(4px); }
+
+/* ========== FIDUCIARY SECTION ========== */
+.fiduciary {
+  padding: 140px 0;
+  background: var(--white);
+}
+.fiduciary-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+.fiduciary-features {
+  display: grid;
+  gap: 36px;
+  margin-top: 40px;
+}
+.fiduciary-feature {
+  display: flex;
+  gap: 20px;
+}
+.fiduciary-feature-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border: 1px solid rgba(201,169,110,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.fiduciary-feature-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+}
+.fiduciary-feature h4 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 6px;
+}
+.fiduciary-feature p {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+.fiduciary-image {
+  position: relative;
+}
+.fiduciary-image img {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* ========== VALUES ========== */
+.values {
+  padding: 140px 0;
+  background: var(--white);
+}
+.values-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.value-card {
+  padding: 36px;
+  background: var(--cream);
+  border-left: 3px solid var(--gold);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.06);
+}
+.value-card h4 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+.value-card p {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--text-light);
+  line-height: 1.75;
+}
+@media (max-width: 768px) {
+  .values-grid {
+    grid-template-columns: 1fr;
+  }
+  .values { padding: 80px 0; }
+}
+
+/* ========== SERVICES ========== */
+.services {
+  padding: 140px 0;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.services::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: radial-gradient(ellipse at 80% 50%, rgba(201,169,110,0.05) 0%, transparent 60%);
+}
+.services-header {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+  z-index: 1;
+}
+.services-header .section-desc { margin: 0 auto; }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2px;
+  position: relative;
+  z-index: 1;
+}
+.service-card {
+  padding: 52px 44px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  transition: all 0.5s ease;
+  position: relative;
+  overflow: hidden;
+}
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+.service-card:hover::before { transform: translateX(0); }
+.service-card:hover { background: rgba(255,255,255,0.06); }
+.service-card-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 24px;
+}
+.service-card-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.2;
+}
+.service-card h3 {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+.service-card p {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.75;
+}
+.service-card ul {
+  list-style: none;
+  margin-top: 20px;
+}
+.service-card li {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  padding: 8px 0;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.service-card li::before {
+  content: '';
+  width: 4px;
+  height: 4px;
+  background: var(--gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* ========== PHILOSOPHY ========== */
+.philosophy {
+  padding: 140px 0;
+  background: var(--cream);
+}
+.philosophy-content {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  align-items: start;
+}
+.philosophy-pillars {
+  display: grid;
+  gap: 40px;
+  margin-top: 40px;
+}
+.pillar {
+  padding: 36px;
+  background: var(--white);
+  border-left: 2px solid var(--gold);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.pillar:hover { transform: translateX(4px); box-shadow: 0 8px 40px rgba(0,0,0,0.06); }
+.pillar-name {
+  font-family: var(--serif);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 10px;
+}
+.pillar-desc {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-light);
+  line-height: 1.75;
+}
+
+/* ========== TEAM ========== */
+.team {
+  padding: 140px 0;
+  background: var(--white);
+}
+.team-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.team-header .section-desc { margin: 0 auto; }
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+.team-grid .team-card:nth-child(4),
+.team-grid .team-card:nth-child(5) {
+  /* Last two cards center in a 2-col sub-row */
+}
+@media (min-width: 1025px) {
+  .team-bottom-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    max-width: 100%;
+    margin: 32px auto 0;
+  }
+}
+.team-card {
+  text-align: center;
+}
+.team-card-img {
+  width: 100%;
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, var(--navy-light), var(--teal));
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.team-card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(10,22,40,0.5), transparent);
+}
+.team-card-initials {
+  font-family: var(--serif);
+  font-size: 42px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.25);
+  position: relative;
+  z-index: 1;
+}
+.team-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  position: relative;
+  z-index: 1;
+}
+.team-card h3 {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+.team-card-role {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.team-card p {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--text-light);
+  line-height: 1.7;
+}
+
+/* ========== LEADER SPOTLIGHT ========== */
+.leader {
+  padding: 140px 0;
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+}
+.leader::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -20%;
+  width: 60%;
+  height: 200%;
+  background: radial-gradient(ellipse, rgba(201,169,110,0.04) 0%, transparent 70%);
+}
+.leader-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: 100px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.leader-img {
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, var(--navy-light), var(--teal));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.leader-img-initials {
+  font-family: var(--serif);
+  font-size: 120px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.08);
+}
+.leader-img-border {
+  position: absolute;
+  inset: -12px;
+  border: 1px solid rgba(201,169,110,0.15);
+}
+.leader-content .section-label { color: var(--gold); }
+.leader-name {
+  font-family: var(--serif);
+  font-size: 44px;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+.leader-title-role {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 32px;
+}
+.leader-text {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.85;
+  margin-bottom: 20px;
+}
+.leader-personal {
+  margin-top: 36px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.leader-personal p {
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.8;
+}
+
+/* ========== MEDIA ========== */
+.media {
+  padding: 140px 0;
+  background: var(--navy);
+  position: relative;
+}
+.media-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.media-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+.media-card:hover {
+  background: rgba(255,255,255,0.08);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+.media-card-thumb {
+  aspect-ratio: 16/9;
+  background: linear-gradient(135deg, var(--navy-light) 0%, var(--teal) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.media-play-btn {
+  width: 56px;
+  height: 56px;
+  background: rgba(201,169,110,0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s, background 0.3s;
+}
+.media-card:hover .media-play-btn {
+  transform: scale(1.1);
+  background: var(--gold);
+}
+.media-play-btn svg {
+  width: 20px;
+  height: 20px;
+  color: var(--navy);
+  margin-left: 3px;
+}
+.media-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: var(--gold);
+  padding: 4px 12px;
+}
+.media-card h3 {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--white);
+  padding: 20px 24px 8px;
+}
+.media-card p {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+  padding: 0 24px 24px;
+}
+@media (max-width: 1024px) {
+  .media-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .media-grid { grid-template-columns: 1fr; }
+  .media { padding: 80px 0; }
+}
+
+/* ========== TESTIMONIALS ========== */
+.testimonials {
+  padding: 140px 0;
+  background: var(--cream);
+  overflow: hidden;
+}
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+.testimonial-card {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+.testimonial-quote-mark {
+  font-family: var(--serif);
+  font-size: 120px;
+  color: var(--gold);
+  line-height: 0.5;
+  margin-bottom: 20px;
+  opacity: 0.3;
+}
+.testimonial-text {
+  font-family: var(--serif);
+  font-size: 22px;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+.testimonial-author {
+  font-family: var(--sans);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  letter-spacing: 1px;
+}
+.testimonial-divider {
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+  margin: 16px auto;
+}
+.testimonial-role {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--text-light);
+  letter-spacing: 0.5px;
+}
+
+/* ========== STATS ========== */
+.stats {
+  padding: 100px 0;
+  background: var(--white);
+  border-top: 1px solid rgba(0,0,0,0.05);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+.stat-item { }
+.stat-number {
+  font-family: var(--serif);
+  font-size: 52px;
+  font-weight: 300;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 10px;
+}
+.stat-number .gold { color: var(--gold); }
+.stat-label {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--text-light);
+}
+
+/* ========== CTA ========== */
+.cta {
+  padding: 160px 0;
+  background: var(--navy);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=1920&q=80') center/cover;
+  opacity: 0.06;
+}
+.cta-content { position: relative; z-index: 1; }
+.cta .section-label { justify-content: center; }
+.cta .section-label::before { display: none; }
+.cta-title {
+  font-family: var(--serif);
+  font-size: clamp(36px, 4.5vw, 56px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+.cta-title em { font-style: italic; color: var(--gold-light); }
+.cta-desc {
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0 auto 44px;
+}
+.cta-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 56px;
+}
+.cta-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.cta-contact-item svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--gold);
+  fill: none;
+  stroke-width: 1.5;
+}
+.cta-contact-item span {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+}
+.cta-contact-item a {
+  font-size: 14px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.5);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.cta-contact-item a:hover { color: var(--gold); }
+
+/* ========== FOOTER ========== */
+.footer {
+  padding: 60px 0 36px;
+  background: #060e1a;
+}
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  margin-bottom: 36px;
+}
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--white);
+  text-decoration: none;
+}
+.footer-logo span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-top: 4px;
+}
+.footer-links {
+  display: flex;
+  gap: 32px;
+}
+.footer-links a {
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-links a:hover { color: var(--gold); }
+.footer-social {
+  display: flex;
+  gap: 16px;
+}
+.footer-social a {
+  width: 36px;
+  height: 36px;
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+.footer-social a:hover { border-color: var(--gold); }
+.footer-social svg { width: 14px; height: 14px; fill: rgba(255,255,255,0.5); }
+.footer-social a:hover svg { fill: var(--gold); }
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-copy {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.25);
+}
+.footer-legal {
+  display: flex;
+  gap: 24px;
+}
+.footer-legal a {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.25);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.footer-legal a:hover { color: var(--gold); }
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .about-grid, .fiduciary-grid, .philosophy-content, .leader-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .services-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .container, .container-narrow, .container-wide { padding: 0 24px; }
+  .nav-inner { padding: 0 24px; }
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero { min-height: 90vh; padding-top: 80px; }
+  .hero-content { padding: 0 20px; }
+  .hero-badge { margin-top: 20px; margin-bottom: 24px; padding: 8px 20px; }
+  .hero-badge span { font-size: 9px; letter-spacing: 2px; }
+  h1 { font-size: 2rem; line-height: 1.2; }
+  h2 { font-size: 1.6rem; }
+  .hero-subtitle { font-size: 0.95rem; padding: 0 10px; }
+  .hero-buttons { flex-direction: column; gap: 12px; }
+  .hero-buttons .btn { width: 100%; text-align: center; }
+  .about, .fiduciary, .services, .philosophy, .team, .leader, .testimonials { padding: 60px 0; }
+  .philosophy-content { gap: 40px; }
+  .philosophy-pillars { gap: 24px; }
+  .pillar { padding: 24px; }
+  .services-grid { gap: 24px; }
+  .service-card { padding: 32px 24px; }
+  .team-grid { grid-template-columns: 1fr; max-width: 280px; margin: 0 auto; }
+  .team-bottom-row { display: grid; grid-template-columns: 1fr; max-width: 280px; margin: 32px auto 0; gap: 32px; }
+  .leader-grid { grid-template-columns: 1fr; }
+  .leader-image { max-height: 350px; }
+  .leader-info { padding: 0 8px; }
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: 32px; }
+  .cta-contact { flex-direction: column; gap: 16px; }
+  .footer-inner { flex-direction: column; gap: 24px; text-align: center; }
+  .footer-bottom { justify-content: center; text-align: center; }
+  .footer-legal { flex-wrap: wrap; justify-content: center; }
+  .about-stat { top: auto; bottom: -20px; right: 10px; }
+  .scroll-indicator { display: none; }
+}
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr; }
+}
+
+/* ========== MOBILE NAV OVERLAY ========== */
+.mobile-nav {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 22, 40, 0.98);
+  backdrop-filter: blur(20px);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+.mobile-nav.active { opacity: 1; pointer-events: all; }
+.mobile-nav a {
+  font-family: var(--serif);
+  font-size: 32px;
+  font-weight: 300;
+  color: var(--white);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.mobile-nav a:hover { color: var(--gold); }
+.mobile-nav-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 28px;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<!-- ===== MOBILE NAV ===== -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-nav-close" onclick="closeMobileNav()">&times;</button>
+  <a href="#home" onclick="closeMobileNav()">Home</a>
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#services" onclick="closeMobileNav()">Services</a>
+  <a href="#philosophy" onclick="closeMobileNav()">Philosophy</a>
+  <a href="#team" onclick="closeMobileNav()">Team</a>
+  <a href="#media" onclick="closeMobileNav()">Media</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo">
+      <div class="nav-logo-icon">
+        <svg viewBox="0 0 36 36">
+          <rect x="2" y="20" width="6" height="14" rx="1" fill="rgba(201,169,110,0.5)"/>
+          <rect x="11" y="14" width="6" height="20" rx="1" fill="rgba(201,169,110,0.7)"/>
+          <rect x="20" y="8" width="6" height="26" rx="1" fill="rgba(201,169,110,0.85)"/>
+          <rect x="29" y="2" width="6" height="32" rx="1" fill="#c9a96e"/>
+        </svg>
+      </div>
+      <div class="nav-logo-text">
+        Maredin
+        <span>Wealth Advisors</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#philosophy">Philosophy</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Us</a></li>
+    </ul>
+    <button class="hamburger" onclick="openMobileNav()" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="hero-badge-dot"></div>
+      <span>Independent &middot; Fiduciary &middot; Focused</span>
+    </div>
+    <h1>Bespoke Miami-Based<br><em>Wealth Management Firm</em></h1>
+    <p class="hero-sub">With Maredin as your trusted advisor, we are dedicated to understanding your vision, nurturing your legacy, and growing your wealth through exceptional, personalized care. Experience the confidence that comes with true peace of mind.</p>
+    <div class="hero-buttons">
+      <a href="#services" class="btn-primary">Discover Our Services
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#about" class="btn-secondary">Learn About Us</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
+  <div class="trust-bar-inner container-wide">
+    <div class="trust-item reveal">
+      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      <span>Independent Firm</span>
+    </div>
+    <div class="trust-item reveal delay-1">
+      <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      <span>Fiduciary Standard</span>
+    </div>
+    <div class="trust-item reveal delay-2">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <span>Est. 2005</span>
+    </div>
+    <div class="trust-item reveal delay-3">
+      <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      <span>Miami, Florida</span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== ABOUT ===== -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image reveal-left">
+        <img src="https://images.unsplash.com/photo-1704236600122-56a1401023d3?w=800&q=80" alt="Biltmore Hotel and Coral Gables aerial view" class="about-image-main">
+        <div class="about-stat">
+          <div class="about-stat-num">20<span style="font-size:28px; color: var(--gold);">+</span></div>
+          <div class="about-stat-label">Years of Excellence</div>
+        </div>
+      </div>
+      <div class="about-content reveal-right">
+        <div class="section-label">About Maredin</div>
+        <h2 class="section-title">A Legacy of Trust,<br><em>Built on Expertise</em></h2>
+        <p class="about-text">Maredin Wealth Advisors was founded in 2005 with a singular mission: to deliver exceptional financial guidance rooted in value investing principles. Originally established as a boutique family office in Miami, Florida, our focus was on maximizing capital appreciation through disciplined, value-driven strategies inspired by the philosophies of Benjamin Graham, Charlie Munger and Warren Buffett.</p>
+        <p class="about-text">As we grew, communities with friends, families, and clients formed around a touching truth, too many high-net-worth individuals and entrepreneurs were receiving generic, untapped advice that failed to address their unique circumstances and goals. Furthermore, they were, regardless of amount of family assets, receiving underwhelming personal care and attention. Recognizing this gap, Maredin transitioned from a family office to an Investment Advisor, expanding our services to offer the same level of care, precision, and expertise to a broader audience.</p>
+        <div class="about-divider"></div>
+        <p class="about-text">Along the way, we also modified our approach. Drawing inspiration from legendary investor Stanley Druckenmiller, we enhanced our value foundation by incorporating multi-strategy macro-focused investment techniques designed to adapt to evolving markets and unlock greater opportunities. This evolution ensures our clients receive a balance of discipline, innovation, and performance.</p>
+        <p class="about-text">A key aspect that sets Maredin apart is our entrepreneurial heritage. Coming from a family of entrepreneurs, this perspective drives our ability to craft holistic strategies that help our clients grow their businesses, preserve their wealth, and build lasting legacies.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FIDUCIARY ===== -->
+<section class="fiduciary">
+  <div class="container">
+    <div class="fiduciary-grid">
+      <div class="reveal-left">
+        <div class="section-label">Fiduciary and Commitment</div>
+        <h2 class="section-title">Let's Build A Legacy<br><em>Together</em></h2>
+        <p class="section-desc">Choosing a wealth manager is one of the most important decisions you'll make. At Maredin, we understand that managing wealth is about more than just financial returns  —  it's about creating a legacy, aligning with your values, and achieving your unique goals.</p>
+        <p class="section-desc" style="margin-top:16px;">With two decades of experience, we combine the personalized care of a boutique family office with sophisticated, results-driven investment approaches designed to protect and grow your wealth by adapting to evolving markets and opportunities.</p>
+        <div class="about-divider"></div>
+        <p class="section-desc" style="font-weight:400;">As a Fiduciary and a truly independent, Miami-based firm, Maredin's loyalty rests solely with our clients. Free from the conflicts of interest that often define larger institutions, we are relentless in our commitment to helping you achieve your financial goals. With deep expertise, tailored strategies, and a dedicated team, we craft solutions to build a legacy that thrives.</p>
+        <div class="fiduciary-features">
+          <div class="fiduciary-feature reveal delay-1">
+            <div class="fiduciary-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4>A Fiduciary</h4>
+              <p>Maredin is a fiduciary, meaning we are legally and ethically obligated to put your best interests first. Unlike commission-based advisors, we provide transparent, unbiased financial advice tailored to your goals. Our only commitment is to you.</p>
+            </div>
+          </div>
+          <div class="fiduciary-feature reveal delay-2">
+            <div class="fiduciary-feature-icon">
+              <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+            </div>
+            <div>
+              <h4>Entrepreneurial Expertise</h4>
+              <p>As a firm born from a family of entrepreneurs, we understand the ambitions, challenges, and complexities of building and sustaining success. This insight allows us to craft holistic strategies that integrate business and personal goals.</p>
+            </div>
+          </div>
+          <div class="fiduciary-feature reveal delay-3">
+            <div class="fiduciary-feature-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            </div>
+            <div>
+              <h4>Tailored Financial Solutions</h4>
+              <p>Every client is unique, and so are their needs. At Maredin, we deliver bespoke financial strategies designed to evolve with your life, business, and legacy.</p>
+            </div>
+          </div>
+          <div class="fiduciary-feature reveal delay-4">
+            <div class="fiduciary-feature-icon">
+              <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <div>
+              <h4>Proven Strategies, Proven Results</h4>
+              <p>Drawing inspiration from the value investing principles of Benjamin Graham and the multi-strategy approach of Stanley Druckenmiller, we deliver disciplined, adaptive strategies that generate long-term results.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fiduciary-image reveal-right">
+        <img src="https://images.unsplash.com/photo-1535498730771-e735b998cd64?w=800&q=80" alt="Miami coastal skyline">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VALUES ===== -->
+<section class="values" id="values">
+  <div class="container">
+    <div class="values-header">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span style="order:-1;width:30px;height:1px;background:var(--gold);"></span>
+        Our Culture
+      </div>
+      <h2 class="section-title reveal delay-1">What We <em>Stand For</em></h2>
+      <p class="section-desc reveal delay-2" style="margin:0 auto;">At the core of Maredin's culture are relationships. Maredin was founded on a fanatically client-centric philosophy. We are committed to helping generate successful investment results and manage risk, but equally as important, maintaining a close personal relationship with each client.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <h4>Relationships</h4>
+        <p>At the core of Maredin's culture are relationships. We are committed to helping generate successful investment results, but equally as important, maintaining a close personal relationship with each client.</p>
+      </div>
+      <div class="value-card reveal delay-1">
+        <h4>Fiduciary / Confidentiality</h4>
+        <p>That is why "we do what we say, and say what we do", and why we have worked to become Advisors. We firmly believe that the importance of not sharing, confiscating, or other wise never diminishing the importance of confidentiality, and how much we insist in it, ensure this remains top of mind in everything we do.</p>
+      </div>
+      <div class="value-card reveal delay-2">
+        <h4>Concierge Service</h4>
+        <p>Maredin offers personalized, high-touch service to clients, providing attentive and bespoke financial guidance beyond standard wealth management offerings.</p>
+      </div>
+      <div class="value-card reveal delay-3">
+        <h4>Independence</h4>
+        <p>As an independent advisor, our opinions and views, we only take action based on our independent judgment, and no institution dictates our behavior.</p>
+      </div>
+      <div class="value-card reveal">
+        <h4>Accountability</h4>
+        <p>Few things in the world sit more than the inability to accept responsibility. We believe in fact at all times, ensuring we are accountable for our decisions and actions.</p>
+      </div>
+      <div class="value-card reveal delay-1">
+        <h4>Value Creation</h4>
+        <p>Because value creation is at the core of everything we do. We understand how hard people work to provide for their families and save for their future. This is why we strive to both preserve capital and grow the funds through proper risk management, due diligence, and applying investing skill.</p>
+      </div>
+      <div class="value-card reveal delay-2">
+        <h4>Planning-First Compensation Model</h4>
+        <p>We provide fee-based advisory services and may receive commissions when implementing insurance strategies as part of a comprehensive financial plan. Recommendations are driven by planning need, not compensation source. Insurance is used selectively to address defined risk management objectives and all compensation is fully disclosed.</p>
+      </div>
+      <div class="value-card reveal delay-3">
+        <h4>Teamwork</h4>
+        <p>Maredin emphasizes a collaborative approach, leveraging the diverse expertise of their team members to provide comprehensive financial solutions for clients.</p>
+      </div>
+      <div class="value-card reveal">
+        <h4>Partnering Together</h4>
+        <p>This concept reflects Maredin's commitment to aligning their success with that of their clients, forming a partnership geared toward mutual growth and prosperity.</p>
+      </div>
+      <div class="value-card reveal delay-1">
+        <h4>Multi-Strategy Investing</h4>
+        <p>Maredin employs a diversified investment approach, utilizing various strategies to manage risk and optimize returns across different market conditions and client objectives.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-header">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span style="order:-1;width:30px;height:1px;background:var(--gold);"></span>
+        What We Do
+      </div>
+      <h2 class="section-title light reveal delay-1">Architects of <em>Wealth</em></h2>
+      <p class="section-desc light reveal delay-2">Maredin provides bespoke financial services tailored to high-net-worth individuals, families, and entrepreneurs, particularly of small and medium-sized businesses. We offer a concierge-level commitment to personal attention and strategic expertise across every phase of the wealth lifecycle.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <h3>Wealth Management</h3>
+        <p>We practice strategic guidance across all facets of your financial life, investment management, tax planning, estate structure, and risk oversight, ensuring each element works in concert. From liquidity events to long-term legacy planning, we serve as your trusted partner at every stage.</p>
+        <ul>
+          <li>Custom Financial Roadmaps</li>
+          <li>Investment Management</li>
+          <li>Tax Optimization</li>
+          <li>Exit Strategy & Liquidity Planning</li>
+        </ul>
+      </div>
+      <div class="service-card reveal delay-1">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+        </div>
+        <h3>Retirement & Qualified Plans</h3>
+        <p>Sophisticated retirement structures that maximize both long-term wealth accumulation and current tax efficiency. For business owners and high-earning individuals, these plans are more than savings vehicles; they're strategic tools for wealth preservation and tax reduction.</p>
+        <ul>
+          <li>401(k) & Profit-Sharing Plans</li>
+          <li>Cash Balance Plans</li>
+          <li>IRAs & Rollovers</li>
+          <li>Plan Optimization & Compliance Oversight</li>
+        </ul>
+      </div>
+      <div class="service-card reveal delay-2">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+        </div>
+        <h3>Estate & Legacy Planning</h3>
+        <p>Comprehensive strategies to protect, transfer, and grow your wealth across generations. We craft holistic plans that integrate both personal and professional priorities.</p>
+        <ul>
+          <li>Trust & Entity Structuring</li>
+          <li>Wealth Transfer Strategies</li>
+          <li>Philanthropic Advisory</li>
+          <li>Business Succession Planning</li>
+        </ul>
+      </div>
+      <div class="service-card reveal delay-3">
+        <div class="service-card-icon">
+          <svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg>
+        </div>
+        <h3>Entrepreneur Solutions</h3>
+        <p>Purpose-built for business owners  —  from exit strategy planning and tax-efficient deal structuring, to post-exit investment management and insurance solutions.</p>
+        <ul>
+          <li>Business Exit Strategy</li>
+          <li>Pre-Sale Positioning</li>
+          <li>Post-Exit Management</li>
+          <li>Insurance Advisory</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PHILOSOPHY ===== -->
+<section class="philosophy" id="philosophy">
+  <div class="container">
+    <div class="philosophy-content">
+      <div class="reveal-left">
+        <div class="section-label">Investment Philosophy</div>
+        <h2 class="section-title">Where Discipline<br>Meets <em>Innovation</em></h2>
+        <p class="section-desc">Over nearly two decades as wealth advisors and investors, we have developed a proprietary philosophy that combines time-tested value investing with adaptive macro strategies.</p>
+        <div class="about-divider"></div>
+        <p class="about-text">We believe in combining a macroeconomic view of the market with fundamental analysis, focusing on broad economic trends while conducting in-depth research on individual investments and their intrinsic value. We aim to identify undervalued opportunities with potential for long-term growth, while prioritizing risk management and position sizing.</p>
+      </div>
+      <div class="reveal-right">
+        <div class="philosophy-pillars">
+          <div class="pillar">
+            <div class="pillar-name">Multi-Strategy Macro Approach</div>
+            <p class="pillar-desc">Inspired by legendary macro investor Stanley Druckenmiller, we make decisions based on top-down macroeconomic perspectives combined with bottom-up fundamental analysis. We are not limited to any specific investment style or asset class, seeking opportunities across various investments using analysis of market conditions, Fed policy, geopolitics, and sentiment.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-name">Value Investing Foundation</div>
+            <p class="pillar-desc">Rooted in the principles of Benjamin Graham, our approach focuses on determining the Intrinsic Value of every investment. We invest only at significant discounts to intrinsic value  —  typically 40-60% below  —  ensuring every position carries what Graham called a built-in "margin of safety."</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-name">Risk Management & Precision</div>
+            <p class="pillar-desc">We prioritize risk management and position sizing to maximize returns while minimizing potential losses. Our disciplined approach balances innovation with proven techniques, adapting to evolving markets while maintaining unwavering commitment to capital preservation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== LEADER ===== -->
+<section class="leader" id="team">
+  <div class="container">
+    <div class="leader-grid">
+      <div class="leader-img reveal-left">
+        <img src="images/marcelo-zinn-leader.jpg" alt="Marcelo Zinn - President / Wealth Advisor">
+        <div class="leader-img-border"></div>
+      </div>
+      <div class="leader-content reveal-right">
+        <div class="section-label">Leadership</div>
+        <h2 class="leader-name">Marcelo Zinn</h2>
+        <p class="leader-title-role">President / Wealth Advisor</p>
+        <p class="leader-text">Maredin Wealth Advisors was founded by Marcelo Zinn in 2005, after being head Portfolio Manager at Juresa Ltda (Brazil). Mr. Zinn has been managing individual portfolios and funds for over 20 years and has an exemplary record. His love for research and analysis of securities and macroeconomic cycles, combined with his interest in crafting investment strategies, is what helps differentiate Mr. Zinn's practice.</p>
+        <p class="leader-text">Mr. Zinn graduated from the University of Miami ("The U") with Dean's List recognition. He has lectured at the University of Miami and contributes to several investing publications including the Manual of Ideas and SeekingAlpha. He currently resides in beautiful Miami, FL with his wife and three children.</p>
+        <div class="leader-personal">
+          <p>In addition to his analytical aspects, Mr. Zinn loves helping people. Being able to help clients with their financial futures is especially rewarding. This is what has always driven him and his passion for this career.</p>
+          <p style="margin-top: 16px;">In his spare time, when not with family and friends, Marcelo loves reading, watching and playing sports (Pickleball, futbol and football), playing music, hosting dinners, watching films, and making churrasco.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section class="team">
+  <div class="container">
+    <div class="team-header">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span style="order:-1;width:30px;height:1px;background:var(--gold);"></span>
+        Our People
+      </div>
+      <h2 class="section-title reveal delay-1">The Maredin <em>Team</em></h2>
+      <p class="section-desc reveal delay-2">A close-knit team of experts committed to providing tailored advice, exceptional service, and results-driven strategies.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal delay-1">
+        <div class="team-card-img">
+          <img src="images/marcelo-zinn.jpg" alt="Marcelo Zinn">
+        </div>
+        <h3>Marcelo Zinn</h3>
+        <p class="team-card-role">President / Wealth Advisor</p>
+        <p>Founder with 20+ years of portfolio management and investment expertise</p>
+      </div>
+      <div class="team-card reveal delay-2">
+        <div class="team-card-img">
+          <img src="images/mannie-de-la-maza.jpg" alt="Mannie de la Maza">
+        </div>
+        <h3>Mannie de la Maza</h3>
+        <p class="team-card-role">Financial Advisor</p>
+        <p>Independent professional dedicated to providing holistic financial solutions tailored to each client's unique needs</p>
+      </div>
+      <div class="team-card reveal delay-3">
+        <div class="team-card-img">
+          <img src="images/pratham-sharma.jpg" alt="Pratham Sharma" style="object-position: center 15%;">
+        </div>
+        <h3>Pratham Sharma</h3>
+        <p class="team-card-role">Investment Associate</p>
+        <p>Personalized support in financial analysis, research, and administrative tasks</p>
+      </div>
+    </div>
+    <div class="team-bottom-row">
+      <div class="team-card reveal delay-4">
+        <div class="team-card-img">
+          <img src="images/daniel-fernandez.jpg" alt="Daniel Fernandez">
+        </div>
+        <h3>Daniel Fernandez</h3>
+        <p class="team-card-role">Analyst</p>
+        <p>University of Miami finance and mathematics student supporting research, financial analysis, and investment strategy</p>
+      </div>
+      <div class="team-card reveal delay-4">
+        <div class="team-card-img">
+          <img src="images/curran-zinn.jpeg" alt="Curran Zinn" style="object-position: center 20%;">
+        </div>
+        <h3>Curran Zinn</h3>
+        <p class="team-card-role">Bookkeeper / Admin</p>
+        <p>Over 20 years of experience in client relations, brand development, and business operations across global markets</p>
+      </div>
+      <div class="team-card reveal delay-4">
+        <div class="team-card-img">
+          <img src="images/salvador-romo.jpg" alt="Salvador Romo">
+        </div>
+        <h3>Salvador Romo, PhD</h3>
+        <p class="team-card-role">Machine Learning / AI</p>
+        <p>Data-driven solutions and AI algorithms enhancing investment models</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STATS ===== -->
+<section class="stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item reveal">
+        <div class="stat-number">20<span class="gold">+</span></div>
+        <div class="stat-label">Years of Excellence</div>
+      </div>
+      <div class="stat-item reveal delay-1">
+        <div class="stat-number">100<span class="gold">%</span></div>
+        <div class="stat-label">Fiduciary Commitment</div>
+      </div>
+      <div class="stat-item reveal delay-2">
+        <div class="stat-number"><span class="gold">$</span>M+</div>
+        <div class="stat-label">Assets Under Advisory</div>
+      </div>
+      <div class="stat-item reveal delay-3">
+        <div class="stat-number">5<span class="gold">&#9733;</span></div>
+        <div class="stat-label">Client Satisfaction</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MEDIA ===== -->
+<section class="media" id="media">
+  <div class="container">
+    <div class="media-header">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span style="order:-1;width:30px;height:1px;background:var(--gold);"></span>
+        Media
+      </div>
+      <h2 class="section-title light reveal delay-1">Videos & <em>Insights</em></h2>
+      <p class="section-desc light reveal delay-2" style="margin:0 auto;">Market updates, investment insights, and educational content from the Maredin team. Stay informed with our latest commentary and analysis.</p>
+    </div>
+    <div class="media-grid">
+      <div class="media-card reveal">
+        <div class="media-card-thumb">
+          <div class="media-play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+          <span class="media-label">Featured</span>
+        </div>
+        <h3>Market Update: Inflation</h3>
+        <p>In-depth analysis on inflation trends and their impact on your investments</p>
+      </div>
+      <div class="media-card reveal delay-1">
+        <div class="media-card-thumb">
+          <div class="media-play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <h3>10 Principles of Smart Financial Decisions</h3>
+        <p>Essential principles for making informed and disciplined financial decisions</p>
+      </div>
+      <div class="media-card reveal delay-2">
+        <div class="media-card-thumb">
+          <div class="media-play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <h3>Post Covid Investing</h3>
+        <p>Strategies and insights for navigating markets in the post-pandemic landscape</p>
+      </div>
+      <div class="media-card reveal delay-3">
+        <div class="media-card-thumb">
+          <div class="media-play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <h3>The Power of Advisory and Boards</h3>
+        <p>How advisory relationships and board involvement drive better financial outcomes</p>
+      </div>
+      <div class="media-card reveal">
+        <div class="media-card-thumb">
+          <div class="media-play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <h3>Get a Mortgage or Refinance</h3>
+        <p>Key considerations and strategies for mortgage decisions and refinancing</p>
+      </div>
+      <div class="media-card reveal delay-1">
+        <div class="media-card-thumb">
+          <div class="media-play-btn">
+            <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          </div>
+        </div>
+        <h3>Understanding SPACs</h3>
+        <p>An in-depth look at Special Purpose Acquisition Companies and their impact</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;" class="reveal">
+      <a href="https://www.youtube.com" target="_blank" rel="noopener" class="btn-primary" style="background:transparent; border:1px solid var(--gold); color:var(--gold);">
+        View All on YouTube
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="testimonials">
+  <div class="container-narrow">
+    <div class="testimonials-header">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span style="order:-1;width:30px;height:1px;background:var(--gold);"></span>
+        Client Testimonials
+      </div>
+      <h2 class="section-title reveal delay-1">What Our Clients <em>Say</em></h2>
+    </div>
+    <div class="testimonials-slider">
+      <div class="testimonial-card reveal delay-2">
+        <div class="testimonial-quote-mark">&ldquo;</div>
+        <p class="testimonial-text">I highly recommend Marcelo at Maredin Wealth Advisors as a Trusted Advisor. He provides invaluable advice that encompasses all aspects of wealth building and preservation. He has been a great resource in making strategic financial decisions, investing, legal matters, tax and much more. His expertise, strategic thinking, and personalized approach have been great for me.</p>
+        <div class="testimonial-author">Dave W.</div>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-role">Client</div>
+      </div>
+      <div class="testimonial-card reveal delay-2" style="margin-top:60px;">
+        <div class="testimonial-quote-mark">&ldquo;</div>
+        <p class="testimonial-text">I highly recommend Maredin Wealth Advisors, which is quite different from the two major investment firms that previously managed my assets. What makes Maredin unique is Marcelo's personal attention, understanding, and advocacy for your specific situation. He genuinely cares about your life and wellbeing. Marcelo looks at your life as a whole and offers recommendations, advice, and personal help tailored to reach your life goals.</p>
+        <div class="testimonial-author">Cindy G.</div>
+        <div class="testimonial-divider"></div>
+        <div class="testimonial-role">Client</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta" id="contact">
+  <div class="container-narrow cta-content">
+    <div class="section-label reveal" style="justify-content:center;">Contact Us</div>
+    <h2 class="cta-title reveal delay-1">Contact <em>Us</em></h2>
+    <p class="cta-desc reveal delay-2" style="font-size:18px; font-weight:400; letter-spacing:1px;">Meeting by Appointment Only</p>
+    <p class="cta-desc reveal delay-2" style="margin-top:8px; margin-bottom:32px;">Maredin Wealth Advisors</p>
+    <div class="reveal delay-3">
+      <a href="mailto:marcelo@maredin.com" class="btn-primary">Get in Touch
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="cta-contact reveal delay-4">
+      <div class="cta-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <a href="tel:3057735308">305-773-5308</a>
+      </div>
+      <div class="cta-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <a href="mailto:marcelo@maredin.com">marcelo@maredin.com</a>
+      </div>
+      <div class="cta-contact-item">
+        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>16132 SW 74th Place<br>Miami, FL 33157</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <a href="#home" class="footer-logo">
+        Maredin
+        <span>Wealth Advisors</span>
+      </a>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#philosophy">Philosophy</a>
+        <a href="#team">Team</a>
+        <a href="#media">Media</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.youtube.com" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="https://www.instagram.com" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://www.facebook.com" target="_blank" rel="noopener" aria-label="Facebook">
+          <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&copy; 2026 Maredin Wealth Advisors. All rights reserved.</div>
+      <div class="footer-legal">
+        <a href="#">Form ADV</a>
+        <a href="#">Privacy Policy</a>
+        <a href="#">Disclaimer</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Scroll animations
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 80);
+});
+
+// Reveal on scroll
+const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -40px 0px' };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, observerOptions);
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Mobile nav
+function openMobileNav() { document.getElementById('mobileNav').classList.add('active'); }
+function closeMobileNav() { document.getElementById('mobileNav').classList.remove('active'); }
+
+// Counter animation for stats
+const statNumbers = document.querySelectorAll('.stat-number');
+const statsObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('counted');
+    }
+  });
+}, { threshold: 0.5 });
+statNumbers.forEach(el => statsObserver.observe(el));
+</script>
+</body>
+</html>
