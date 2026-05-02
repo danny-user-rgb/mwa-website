@@ -41,12 +41,7 @@ body {
 .wrap-xs { max-width: 640px;  margin: 0 auto; padding: 0 var(--wrap-pad); }
 
 /* ── Reveal ── */
-.rev, .rev-l, .rev-r {
-  opacity: 0; transition: opacity 0.65s ease, transform 0.65s ease;
-}
-.rev   { transform: translateY(24px); }
-.rev-l { transform: translateX(-36px); }
-.rev-r { transform: translateX(36px); }
+.rev, .rev-l, .rev-r { opacity: 1; transform: none; transition: none; }
 .rev.on, .rev-l.on, .rev-r.on { opacity: 1; transform: none; }
 .d1 { transition-delay: 0.1s; }
 .d2 { transition-delay: 0.2s; }
@@ -185,6 +180,7 @@ h2.ttl.center { text-align: center; }
 .btn-gold:hover  { background: var(--gold-lt); transform: translateY(-1px); box-shadow: 0 5px 18px rgba(184,151,106,0.25); }
 .btn-outline-gold { background: transparent; color: var(--gold); border: 1px solid var(--gold); }
 .btn-outline-gold:hover { background: var(--gold); color: var(--navy); }
+.btn-outline-gold:active { background: var(--gold); color: var(--navy); }
 
 /* ══════════════ CARDS ══════════════ */
 .card {
