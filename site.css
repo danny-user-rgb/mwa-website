@@ -25,7 +25,7 @@
   --wrap-pad: clamp(20px, 5vw, 56px);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
 
 body {
   font-family: var(--sans);
@@ -97,6 +97,47 @@ body {
 }
 .nav-cta:hover, .nav-cta:active, .nav-cta.active { background: var(--gold) !important; color: var(--navy) !important; }
 .nav-cta::after, .nav-cta.active::after { display: none !important; }
+
+/* ── Nav Dropdown ── */
+.has-dropdown { position: relative; }
+.has-dropdown > a { display: flex; align-items: center; gap: 5px; }
+.has-dropdown > a::after { display: none !important; }
+.caret {
+  display: inline-block; width: 6px; height: 6px;
+  border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px); transition: transform 0.2s; flex-shrink: 0;
+}
+.has-dropdown:hover > a .caret { transform: rotate(-135deg) translateY(2px); }
+.nav-dropdown {
+  position: absolute; top: calc(100% + 14px); left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  min-width: 210px; background: var(--white);
+  border: 1px solid var(--border);
+  box-shadow: 0 8px 32px rgba(13,23,41,0.1);
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.2s, transform 0.2s;
+  list-style: none; padding: 6px 0; z-index: 300;
+}
+.has-dropdown:hover .nav-dropdown { opacity: 1; pointer-events: all; transform: translateX(-50%) translateY(0); }
+.nav-dropdown li a {
+  display: block; padding: 10px 20px;
+  font-size: 11px; font-weight: 400; letter-spacing: 0.4px; text-transform: none;
+  color: var(--text-mid); text-decoration: none;
+  transition: color 0.2s, background 0.2s; white-space: nowrap;
+}
+.nav-dropdown li a::after { display: none !important; }
+.nav-dropdown li a:hover { color: var(--navy); background: var(--off-white); }
+
+/* ── Mobile nav services sub-section ── */
+.mob-section {
+  font-size: 10px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); margin-top: 4px;
+}
+.mob-nav a.mob-sub {
+  font-family: var(--sans) !important; font-size: 15px !important;
+  font-weight: 300 !important; color: var(--text-mid) !important;
+  letter-spacing: 0.3px; text-transform: none !important;
+}
 
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
@@ -196,7 +237,7 @@ h2.ttl.center { text-align: center; }
 .card-gold-left { border-left: 2px solid var(--gold); border-top: none; border-right: none; border-bottom: none; }
 
 /* ══════════════ FOOTER ══════════════ */
-.footer { background: #060d18; padding: clamp(36px,6vw,56px) 0 clamp(20px,3vw,28px); }
+.footer { background: var(--navy); padding: clamp(36px,6vw,56px) 0 clamp(20px,3vw,28px); }
 .footer-top {
   display: flex; align-items: flex-start; justify-content: space-between;
   flex-wrap: wrap; gap: 32px; padding-bottom: clamp(24px,4vw,36px);

@@ -3,42 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team | Maredin Wealth Advisors</title>
-<meta name="description" content="Meet the Maredin team — experienced professionals dedicated to your financial success.">
+<title>Investment Advisory | Maredin Wealth Advisors</title>
+<meta name="description" content="A properly structured investment plan ensures your objectives and goals are met or exceeded.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <style>
-/* Leader */
-.leader-grid { display: grid; grid-template-columns: 0.7fr 1fr; gap: clamp(40px,7vw,88px); align-items: start; }
-.leader-img-wrap { position: relative; aspect-ratio: 3/4; overflow: hidden; background: linear-gradient(135deg, var(--off-white), var(--cream)); }
-.leader-img-wrap img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-.leader-border { position: absolute; inset: -10px; border: 1px solid rgba(184,151,106,0.2); pointer-events: none; z-index: 1; }
-.leader-name  { font-family: var(--serif); font-size: clamp(30px,4vw,44px); font-weight: 300; color: var(--navy); margin-bottom: 6px; }
-.leader-role  { font-size: 11px; font-weight: 500; letter-spacing: 1.8px; text-transform: uppercase; color: var(--gold); margin-bottom: 28px; }
-.leader-body  { display: flex; flex-direction: column; gap: 14px; }
-.leader-note  { margin-top: 24px; padding-top: 22px; border-top: 1px solid var(--border); }
-
-/* Team grid */
-.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(20px,3vw,32px); }
-.team-card { text-align: center; }
-.team-photo { width: 100%; aspect-ratio: 1; overflow: hidden; background: linear-gradient(135deg, #e6e2dc, #d0cbc3); margin-bottom: 16px; }
-.team-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-.team-card h3   { font-family: var(--serif); font-size: clamp(16px,2vw,20px); font-weight: 500; color: var(--navy); margin-bottom: 4px; }
-.team-card-role { font-size: 10px; font-weight: 500; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
-.team-card p    { font-size: 13px; font-weight: 300; color: var(--text-lt); line-height: 1.65; }
-
-@media (max-width: 900px) {
-  .leader-grid { grid-template-columns: 1fr; gap: 40px; }
-  .leader-img-wrap { max-height: 400px; }
-}
-@media (max-width: 700px) {
-  .team-grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 440px) {
-  .team-grid { grid-template-columns: 1fr; max-width: 260px; margin: 0 auto; }
-}
+.svc-block { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px,7vw,88px); align-items: start; }
+.svc-num { font-family: var(--serif); font-size: 80px; font-weight: 300; color: var(--gold-pale); line-height: 1; margin-bottom: 12px; }
+.svc-title { font-family: var(--serif); font-size: clamp(26px,3.5vw,38px); font-weight: 300; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
+.svc-title em { font-style: italic; }
+.svc-body { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
+.svc-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.svc-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.6; }
+.svc-list li::before { content: ''; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
+.svc-visual { aspect-ratio: 4/3; overflow: hidden; position: relative; background: var(--off-white); }
+.svc-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
+@media (max-width: 860px) { .svc-block { grid-template-columns: 1fr; gap: 36px; } }
 </style>
 </head>
 <body>
@@ -47,7 +29,7 @@
   <button class="mob-close" onclick="closeMob()">&times;</button>
   <a href="index.html" onclick="closeMob()">Home</a>
   <a href="about.html" onclick="closeMob()">About</a>
-    <span class="mob-section">Services</span>
+  <span class="mob-section">Services</span>
   <a href="service-wealth-advisory.html" onclick="closeMob()" class="mob-sub">Wealth Advisory</a>
   <a href="service-investment-advisory.html" onclick="closeMob()" class="mob-sub">Investment Advisory</a>
   <a href="service-financial-planning.html" onclick="closeMob()" class="mob-sub">Financial Planning</a>
@@ -68,7 +50,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
-            <li class="has-dropdown">
+      <li class="has-dropdown">
         <a href="services.html">Services <span class="caret"></span></a>
         <ul class="nav-dropdown">
           <li><a href="service-wealth-advisory.html">Wealth Advisory</a></li>
@@ -89,91 +71,46 @@
 </nav>
 
 <header class="page-header">
-  <div class="label rev">Our People</div>
-  <h1 class="rev d1">The Maredin <em>Team</em></h1>
-  <p class="rev d2">A close-knit group of professionals committed to exceptional service, rigorous analysis, and lasting client relationships.</p>
+  <div class="label rev">What We Do</div>
+  <h1 class="rev d1">Investment <em>Advisory</em></h1>
+  <p class="rev d2">A properly structured investment plan ensures your objectives and goals are met or exceeded.</p>
 </header>
 
-<!-- Leader -->
 <section class="sec">
   <div class="wrap">
-    <div class="leader-grid">
-      <div class="leader-img-wrap rev-l">
-        <img src="../images/marcelo-zinn-leader.jpg" alt="Marcelo Zinn">
-        <div class="leader-border"></div>
+    <div class="svc-block">
+      <div class="svc-text rev-l">
+        <div class="svc-num">02</div>
+        <h3 class="svc-title">Portfolio Management Built for <em>You</em></h3>
+        <div class="svc-body">
+          <p class="body-t">A properly structured and developed investment plan is key to ensuring that your investment objectives and goals are met or exceeded. We build portfolios grounded in Value Investing principles — disciplined, independent, and results-driven.</p>
+        </div>
+        <ul class="svc-list">
+          <li>Custom portfolio construction and management</li>
+          <li>Value Investing philosophy of Benjamin Graham</li>
+          <li>Separately Managed Account portfolios</li>
+          <li>Ongoing portfolio monitoring and rebalancing</li>
+          <li>Performance reporting and transparency</li>
+        </ul>
+        <div style="margin-top:28px;">
+          <a href="contact.html" class="btn btn-dark">Schedule a Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+        </div>
       </div>
-      <div class="rev-r">
-        <div class="label">Founder &amp; President</div>
-        <h2 class="leader-name">Marcelo Zinn</h2>
-        <p class="leader-role">President / Wealth Advisor</p>
-        <div class="leader-body">
-          <p class="body-t">Marcelo Zinn founded Maredin Wealth Advisors in 2005, after serving as head Portfolio Manager at Juresa Ltda in Brazil. Over more than 20 years, he has built an exemplary record managing individual portfolios and funds with a philosophy grounded in value investing, macroeconomic analysis, and disciplined risk management.</p>
-          <p class="body-t">Mr. Zinn graduated from the University of Miami with Dean's List recognition. He has lectured at the University of Miami and contributes to investing publications including the Manual of Ideas and SeekingAlpha.</p>
-          <p class="body-t">His deep analytical expertise is matched by a genuine love for helping people — being a trusted partner in clients' financial lives is what has always driven him in this career.</p>
-        </div>
-        <div class="leader-note">
-          <p class="body-t" style="color:var(--text-lt);font-size:14px;">Outside the office, Marcelo enjoys reading, sports (Pickleball, futbol, football), playing music, hosting dinners, and making churrasco with his wife and three children in Miami.</p>
-        </div>
+      <div class="svc-visual rev-r">
+        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80" alt="Investment Advisory">
       </div>
     </div>
   </div>
 </section>
 
-<!-- Team -->
-<section class="sec sec-alt">
-  <div class="wrap">
-    <div style="margin-bottom:clamp(36px,5vw,56px);">
-      <div class="label rev">The Full Team</div>
-      <h2 class="ttl rev d1">Dedicated <em>Professionals</em></h2>
-    </div>
-    <div class="team-grid">
-      <div class="team-card rev d1">
-        <div class="team-photo"><img src="../images/marcelo-zinn.jpg" alt="Marcelo Zinn"></div>
-        <h3>Marcelo Zinn</h3>
-        <p class="team-card-role">President / Wealth Advisor</p>
-        <p>Founder with 20+ years of portfolio management and investment expertise</p>
-      </div>
-      <div class="team-card rev d2">
-        <div class="team-photo"><img src="../images/mannie-de-la-maza.jpg" alt="Mannie de la Maza"></div>
-        <h3>Mannie de la Maza</h3>
-        <p class="team-card-role">Financial Advisor</p>
-        <p>Holistic financial solutions tailored to each client's unique needs and goals</p>
-      </div>
-      <div class="team-card rev d3">
-        <div class="team-photo"><img src="../images/pratham-sharma.jpg" alt="Pratham Sharma" style="object-position:center 15%"></div>
-        <h3>Pratham Sharma</h3>
-        <p class="team-card-role">Investment Associate</p>
-        <p>Financial analysis, research, and personalized client support</p>
-      </div>
-      <div class="team-card rev d1">
-        <div class="team-photo"><img src="../images/daniel-fernandez.jpg" alt="Daniel Fernandez"></div>
-        <h3>Daniel Fernandez</h3>
-        <p class="team-card-role">Analyst</p>
-        <p>University of Miami — finance and mathematics, investment research and strategy</p>
-      </div>
-      <div class="team-card rev d2">
-        <div class="team-photo"><img src="../images/curran-zinn.jpeg" alt="Curran Zinn" style="object-position:center 20%"></div>
-        <h3>Curran Zinn</h3>
-        <p class="team-card-role">Bookkeeper / Admin</p>
-        <p>20+ years in client relations, brand development, and business operations</p>
-      </div>
-      <div class="team-card rev d3">
-        <div class="team-photo"><img src="../images/salvador-romo.jpg" alt="Salvador Romo"></div>
-        <h3>Salvador Romo, PhD</h3>
-        <p class="team-card-role">Machine Learning / AI</p>
-        <p>AI-driven solutions and algorithms enhancing investment models and analysis</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA -->
 <section class="sec sec-dark">
   <div class="wrap-xs" style="text-align:center;">
-    <div class="label lc rev" style="color:var(--gold);">Work With Us</div>
-    <h2 class="ttl light center rev d1">Let's Start a <em>Conversation</em></h2>
-    <p class="body-t rev d2" style="color:rgba(255,255,255,0.45);margin-bottom:32px;">We work by appointment. Reach out to begin building your financial future with the Maredin team.</p>
-    <div class="rev d3"><a href="contact.html" class="btn btn-gold">Contact Us <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+    <div class="label lc rev" style="color:var(--gold);">Take the Next Step</div>
+    <h2 class="ttl light center rev d1">Ready to Build Your <em>Investment Portfolio?</em></h2>
+    <p class="body-t rev d2" style="color:rgba(255,255,255,0.45);margin-bottom:32px;">Schedule a conversation with our team to explore how our Investment Advisory services can serve you.</p>
+    <div class="rev d3">
+      <a href="contact.html" class="btn btn-gold">Schedule a Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
   </div>
 </section>
 

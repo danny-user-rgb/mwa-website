@@ -3,55 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Services | Maredin Wealth Advisors</title>
-<meta name="description" content="Bespoke wealth management, retirement planning, estate planning, and entrepreneur solutions.">
+<title>Retirement Planning | Maredin Wealth Advisors</title>
+<meta name="description" content="Start planning today to ensure you meet your retirement goals and never outlive your resources.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="site.css">
 <style>
-.svc-block { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px,7vw,88px); align-items: start; margin-bottom: clamp(72px,9vw,110px); }
-.svc-block:last-child { margin-bottom: 0; }
-.svc-block.flip .svc-text { order: -1; }
+.svc-block { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px,7vw,88px); align-items: start; }
 .svc-num { font-family: var(--serif); font-size: 80px; font-weight: 300; color: var(--gold-pale); line-height: 1; margin-bottom: 12px; }
-.svc-icon-lg { width: 44px; height: 44px; margin-bottom: 20px; }
-.svc-icon-lg svg { width: 100%; height: 100%; stroke: var(--gold); fill: none; stroke-width: 1.2; }
 .svc-title { font-family: var(--serif); font-size: clamp(26px,3.5vw,38px); font-weight: 300; color: var(--navy); line-height: 1.2; margin-bottom: 16px; }
 .svc-title em { font-style: italic; }
 .svc-body { display: flex; flex-direction: column; gap: 14px; margin-bottom: 28px; }
 .svc-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 .svc-list li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; font-weight: 300; color: var(--text-mid); line-height: 1.6; }
 .svc-list li::before { content: ''; width: 4px; height: 4px; background: var(--gold); border-radius: 50%; flex-shrink: 0; margin-top: 7px; }
-.svc-visual {
-  aspect-ratio: 4/3; overflow: hidden; position: relative;
-  background: linear-gradient(135deg, var(--off-white), var(--cream));
-}
+.svc-visual { aspect-ratio: 4/3; overflow: hidden; position: relative; background: var(--off-white); }
 .svc-visual img { width: 100%; height: 100%; object-fit: cover; display: block; }
-.svc-visual-num {
-  position: absolute; bottom: 20px; right: 24px;
-  font-family: var(--serif); font-size: 120px; font-weight: 300;
-  color: rgba(13,23,41,0.05); line-height: 1; pointer-events: none; user-select: none;
-}
-
-.process-row { display: grid; grid-template-columns: repeat(4,1fr); gap: var(--gap); }
-.process-step { text-align: center; }
-.step-num {
-  width: 48px; height: 48px; border: 1px solid rgba(184,151,106,0.4);
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 16px;
-  font-family: var(--serif); font-size: 18px; font-weight: 300; color: var(--gold);
-}
-.process-step h4 { font-family: var(--serif); font-size: 17px; font-weight: 500; color: var(--navy); margin-bottom: 8px; }
-.process-step p  { font-size: 13px; font-weight: 300; color: var(--text-lt); line-height: 1.7; }
-
-@media (max-width: 860px) {
-  .svc-block { grid-template-columns: 1fr; gap: 36px; }
-  .svc-block.flip .svc-text { order: 0; }
-  .process-row { grid-template-columns: repeat(2,1fr); }
-}
-@media (max-width: 480px) {
-  .process-row { grid-template-columns: 1fr; }
-}
+@media (max-width: 860px) { .svc-block { grid-template-columns: 1fr; gap: 36px; } }
 </style>
 </head>
 <body>
@@ -60,7 +29,7 @@
   <button class="mob-close" onclick="closeMob()">&times;</button>
   <a href="index.html" onclick="closeMob()">Home</a>
   <a href="about.html" onclick="closeMob()">About</a>
-    <span class="mob-section">Services</span>
+  <span class="mob-section">Services</span>
   <a href="service-wealth-advisory.html" onclick="closeMob()" class="mob-sub">Wealth Advisory</a>
   <a href="service-investment-advisory.html" onclick="closeMob()" class="mob-sub">Investment Advisory</a>
   <a href="service-financial-planning.html" onclick="closeMob()" class="mob-sub">Financial Planning</a>
@@ -81,7 +50,7 @@
     </a>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
-            <li class="has-dropdown">
+      <li class="has-dropdown">
         <a href="services.html">Services <span class="caret"></span></a>
         <ul class="nav-dropdown">
           <li><a href="service-wealth-advisory.html">Wealth Advisory</a></li>
@@ -103,48 +72,18 @@
 
 <header class="page-header">
   <div class="label rev">What We Do</div>
-  <h1 class="rev d1">Architects of <em>Wealth</em></h1>
-  <p class="rev d2">Bespoke financial services for high-net-worth individuals, families, and entrepreneurs — with concierge-level attention at every stage.</p>
+  <h1 class="rev d1">Retirement <em>Planning</em></h1>
+  <p class="rev d2">Start planning today to ensure you meet your retirement goals and never outlive your resources.</p>
 </header>
 
-<!-- Services -->
 <section class="sec">
   <div class="wrap">
-
     <div class="svc-block">
       <div class="svc-text rev-l">
-        <div class="svc-num">01</div>
-        <div class="svc-icon-lg"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-        <h3 class="svc-title">Wealth <em>Management</em></h3>
+        <div class="svc-num">05</div>
+        <h3 class="svc-title">Plan Today for a Secure <em>Tomorrow</em></h3>
         <div class="svc-body">
-          <p class="body-t">Strategic guidance across all facets of your financial life — investment management, tax planning, estate structure, and risk oversight — ensuring each element works in concert toward your long-term goals.</p>
-          <p class="body-t">From liquidity events to multi-generational legacy planning, we serve as your trusted partner at every stage of the wealth lifecycle.</p>
-        </div>
-        <ul class="svc-list">
-          <li>Custom financial roadmaps aligned to your goals</li>
-          <li>Discretionary and advisory investment management</li>
-          <li>Tax optimization and planning</li>
-          <li>Exit strategy and liquidity event planning</li>
-          <li>Risk management and insurance review</li>
-        </ul>
-      </div>
-      <div class="svc-visual rev-r">
-        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Wealth Management">
-        <div class="svc-visual-num">01</div>
-      </div>
-    </div>
-
-    <div class="svc-block flip">
-      <div class="svc-visual rev-l">
-        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80" alt="Retirement Planning">
-        <div class="svc-visual-num">02</div>
-      </div>
-      <div class="svc-text rev-r">
-        <div class="svc-num">02</div>
-        <div class="svc-icon-lg"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg></div>
-        <h3 class="svc-title">Retirement &amp; <em>Qualified Plans</em></h3>
-        <div class="svc-body">
-          <p class="body-t">Sophisticated retirement structures that maximize both long-term wealth accumulation and current tax efficiency. For business owners and high-earning individuals, these plans are strategic tools for wealth preservation — not just savings vehicles.</p>
+          <p class="body-t">It's important to start planning today to help ensure you meet your retirement goals and be certain you don't outlive your resources. We build sophisticated retirement structures that maximize long-term wealth and current tax efficiency.</p>
         </div>
         <ul class="svc-list">
           <li>401(k) and profit-sharing plan design</li>
@@ -153,95 +92,25 @@
           <li>Plan optimization and compliance oversight</li>
           <li>Executive deferred compensation planning</li>
         </ul>
-      </div>
-    </div>
-
-    <div class="svc-block">
-      <div class="svc-text rev-l">
-        <div class="svc-num">03</div>
-        <div class="svc-icon-lg"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg></div>
-        <h3 class="svc-title">Estate &amp; <em>Legacy Planning</em></h3>
-        <div class="svc-body">
-          <p class="body-t">Comprehensive strategies to protect, transfer, and grow your wealth across generations. We craft holistic plans that integrate personal priorities, family dynamics, and professional considerations.</p>
+        <div style="margin-top:28px;">
+          <a href="contact.html" class="btn btn-dark">Schedule a Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
         </div>
-        <ul class="svc-list">
-          <li>Trust and entity structuring</li>
-          <li>Wealth transfer and gifting strategies</li>
-          <li>Charitable and philanthropic advisory</li>
-          <li>Business succession planning</li>
-          <li>Multi-generational family wealth governance</li>
-        </ul>
       </div>
       <div class="svc-visual rev-r">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Estate Planning">
-        <div class="svc-visual-num">03</div>
-      </div>
-    </div>
-
-    <div class="svc-block flip">
-      <div class="svc-visual rev-l">
-        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80" alt="Entrepreneur Solutions">
-        <div class="svc-visual-num">04</div>
-      </div>
-      <div class="svc-text rev-r">
-        <div class="svc-num">04</div>
-        <div class="svc-icon-lg"><svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div>
-        <h3 class="svc-title">Entrepreneur <em>Solutions</em></h3>
-        <div class="svc-body">
-          <p class="body-t">Purpose-built for business owners — from exit strategy planning and tax-efficient deal structuring, to post-exit investment management. As a firm founded by entrepreneurs, we understand the unique intersection of business and personal wealth.</p>
-        </div>
-        <ul class="svc-list">
-          <li>Business exit strategy and timing</li>
-          <li>Pre-sale positioning and tax planning</li>
-          <li>Deal structure advisory</li>
-          <li>Post-exit wealth management</li>
-          <li>Business-owner insurance solutions</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- Process -->
-<section class="sec sec-alt">
-  <div class="wrap">
-    <div style="text-align:center; margin-bottom:clamp(36px,5vw,56px);">
-      <div class="label lc rev">How We Work</div>
-      <h2 class="ttl center rev d1">Our <em>Process</em></h2>
-    </div>
-    <div class="process-row">
-      <div class="process-step rev">
-        <div class="step-num">1</div>
-        <h4>Discovery</h4>
-        <p>We take time to understand your full financial picture — goals, values, family dynamics, and business interests.</p>
-      </div>
-      <div class="process-step rev d1">
-        <div class="step-num">2</div>
-        <h4>Strategy</h4>
-        <p>We build a comprehensive, personalized financial plan that addresses every dimension of your wealth.</p>
-      </div>
-      <div class="process-step rev d2">
-        <div class="step-num">3</div>
-        <h4>Implementation</h4>
-        <p>We execute with discipline and precision — coordinating across investment, tax, legal, and insurance.</p>
-      </div>
-      <div class="process-step rev d3">
-        <div class="step-num">4</div>
-        <h4>Ongoing Review</h4>
-        <p>We monitor, adapt, and evolve your plan as markets shift and your life circumstances change.</p>
+        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800&q=80" alt="Retirement Planning">
       </div>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
 <section class="sec sec-dark">
   <div class="wrap-xs" style="text-align:center;">
-    <div class="label lc rev" style="color:var(--gold);">Next Steps</div>
-    <h2 class="ttl light center rev d1">Let's Build Your <em>Plan</em></h2>
-    <p class="body-t rev d2" style="color:rgba(255,255,255,0.45);margin-bottom:32px;">Schedule a consultation to discuss how our services can be tailored to your situation.</p>
-    <div class="rev d3"><a href="contact.html" class="btn btn-gold">Schedule a Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+    <div class="label lc rev" style="color:var(--gold);">Take the Next Step</div>
+    <h2 class="ttl light center rev d1">Ready to Secure Your <em>Retirement?</em></h2>
+    <p class="body-t rev d2" style="color:rgba(255,255,255,0.45);margin-bottom:32px;">Schedule a conversation with our team to explore how our Retirement Planning services can serve you.</p>
+    <div class="rev d3">
+      <a href="contact.html" class="btn btn-gold">Schedule a Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+    </div>
   </div>
 </section>
 
