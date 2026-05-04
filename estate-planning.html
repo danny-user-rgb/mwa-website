@@ -58,6 +58,17 @@
 <div class="mob-nav" id="mobNav">
   <button class="mob-close" onclick="closeMob()">&times;</button>
   <a href="index.html" onclick="closeMob()">Home</a>
+  <div class="mob-dropdown">
+    <button class="mob-dropdown-toggle" onclick="toggleMobDropdown(this)">Services <svg class="mob-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="mob-dropdown-links">
+      <a href="wealth-management.html" onclick="closeMob()">Wealth Advisory</a>
+      <a href="wealth-management.html" onclick="closeMob()">Investment Advisory</a>
+      <a href="wealth-management.html" onclick="closeMob()">Financial Planning</a>
+      <a href="estate-planning.html" onclick="closeMob()">Estate Planning</a>
+      <a href="retirement-plans.html" onclick="closeMob()">Retirement Planning</a>
+      <a href="entrepreneur-solutions.html" onclick="closeMob()">Business Succession</a>
+    </div>
+  </div>
   <a href="about.html" onclick="closeMob()">About</a>
   <a href="philosophy.html" onclick="closeMob()">Philosophy</a>
   <a href="team.html" onclick="closeMob()">Team</a>
@@ -72,6 +83,17 @@
       <div class="logo-text">Maredin<span>Wealth Advisors</span></div>
     </a>
     <ul class="nav-links">
+      <li class="has-dropdown">
+        <a href="#">Services <svg class="chevron-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown">
+          <a href="wealth-management.html">Wealth Advisory</a>
+          <a href="wealth-management.html">Investment Advisory</a>
+          <a href="wealth-management.html">Financial Planning</a>
+          <a href="estate-planning.html">Estate Planning</a>
+          <a href="retirement-plans.html">Retirement Planning</a>
+          <a href="entrepreneur-solutions.html">Business Succession</a>
+        </div>
+      </li>
       <li><a href="about.html">About</a></li>
       <li><a href="philosophy.html">Philosophy</a></li>
       <li><a href="team.html">Team</a></li>
@@ -142,11 +164,11 @@
   </div>
 </section>
 
-<section class="sec sec-dark">
+<section class="sec sec-cta">
   <div class="wrap-xs" style="text-align:center;">
     <div class="label lc rev" style="color:var(--gold);">Get Started</div>
-    <h2 class="ttl light center rev d1">Protect What You've <em>Built</em></h2>
-    <p class="body-t rev d2" style="color:rgba(255,255,255,0.45);margin-bottom:32px;">Schedule a conversation to begin designing your estate and legacy plan.</p>
+    <h2 class="ttl center rev d1">Protect What You've <em>Built</em></h2>
+    <p class="body-t rev d2" style="color:var(--text-mid);margin-bottom:32px;">Schedule a conversation to begin designing your estate and legacy plan.</p>
     <div class="rev d3"><a href="contact.html" class="btn btn-gold">Contact Us <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
   </div>
 </section>

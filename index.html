@@ -19,15 +19,16 @@
   overflow: hidden;
 }
 .hero-left {
-  background: var(--navy);
-  display: flex; flex-direction: column; justify-content: center;
+  background: var(--cream);
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  text-align: center;
   padding: calc(68px + clamp(36px,5vw,64px)) clamp(28px,5vw,72px) clamp(56px,7vw,88px);
   position: relative;
 }
 .hero-left::after {
   content: '';
   position: absolute; top: 0; bottom: 0; right: 0;
-  width: 1px; background: rgba(184,151,106,0.12);
+  width: 1px; background: var(--border);
 }
 .hero-right {
   position: relative; overflow: hidden;
@@ -59,39 +60,39 @@
 }
 .hero-badge-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
 .hero-badge span { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
-.hero-line { width: 40px; height: 1px; background: var(--gold); margin-bottom: clamp(16px,2.5vw,26px); }
+.hero-line { width: 40px; height: 1px; background: var(--gold); margin: 0 auto clamp(16px,2.5vw,26px); }
 .hero h1 {
   font-family: var(--serif); font-size: clamp(38px,5vw,68px); font-weight: 300;
-  color: var(--white); line-height: 1.1; letter-spacing: -0.5px;
+  color: var(--navy); line-height: 1.1; letter-spacing: -0.5px;
   margin-bottom: clamp(14px,2vw,22px);
 }
 .hero h1 em { font-style: italic; color: var(--gold); display: block; }
 .hero-sub {
   font-size: clamp(14px,1.65vw,16px); font-weight: 300;
-  color: rgba(255,255,255,0.58); line-height: 1.9;
-  max-width: 400px; margin-bottom: clamp(28px,4vw,44px);
+  color: var(--text-mid); line-height: 1.9;
+  max-width: 400px; margin: 0 auto clamp(28px,4vw,44px);
 }
-.hero-btns { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: clamp(36px,6vw,72px); }
+.hero-btns { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; margin-bottom: clamp(36px,6vw,72px); }
 .hero-stats {
   display: flex; align-items: center; gap: clamp(18px,3vw,40px);
   padding-top: clamp(20px,2.5vw,32px);
-  border-top: 1px solid rgba(255,255,255,0.07);
+  border-top: 1px solid var(--border);
 }
 .hero-stat-n {
   font-family: var(--serif); font-size: clamp(22px,2.6vw,32px);
-  font-weight: 300; color: var(--white); line-height: 1;
+  font-weight: 300; color: var(--navy); line-height: 1;
 }
 .hero-stat-n sup { font-size: 0.55em; color: var(--gold); vertical-align: super; }
 .hero-stat-l {
   font-size: 9px; font-weight: 500; letter-spacing: 1.5px;
-  text-transform: uppercase; color: rgba(255,255,255,0.32); margin-top: 5px;
+  text-transform: uppercase; color: var(--text-lt); margin-top: 5px;
 }
-.hero-stat-sep { width: 1px; height: 30px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
+.hero-stat-sep { width: 1px; height: 30px; background: var(--border); flex-shrink: 0; }
 .hero-scroll {
   position: absolute; bottom: clamp(20px,3vw,36px); right: clamp(20px,3vw,36px);
   display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 3;
 }
-.hero-scroll span { font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.38); }
+.hero-scroll span { font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--text-lt); }
 .scroll-line { width: 1px; height: 26px; background: linear-gradient(to bottom, var(--gold), transparent); animation: pulse 2s ease infinite; }
 @keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }
 
@@ -104,7 +105,7 @@
   .hero-scroll { bottom: 18px; right: 18px; }
 }
 @media (max-width: 560px) {
-  .hero-btns { flex-direction: column; align-items: flex-start; }
+  .hero-btns { flex-direction: column; align-items: center; }
   .hero-btns .btn { width: 100%; max-width: 300px; justify-content: center; }
   .hero-right { height: 52vw; }
   .hero-stats { gap: 14px; }
@@ -171,10 +172,10 @@
 .cta-banner { text-align: center; }
 .cta-banner h2 {
   font-family: var(--serif); font-size: clamp(30px,4vw,50px); font-weight: 300;
-  color: var(--white); line-height: 1.2; margin-bottom: 16px;
+  color: var(--navy); line-height: 1.2; margin-bottom: 16px;
 }
-.cta-banner h2 em { font-style: italic; color: var(--gold-lt); }
-.cta-banner p { font-size: 15px; font-weight: 300; color: rgba(255,255,255,0.48); margin-bottom: 32px; }
+.cta-banner h2 em { font-style: italic; color: var(--gold); }
+.cta-banner p { font-size: 15px; font-weight: 300; color: var(--text-mid); margin-bottom: 32px; }
 
 @media (max-width: 860px) {
   .svc-row    { grid-template-columns: repeat(2,1fr); }
@@ -196,6 +197,17 @@
 <div class="mob-nav" id="mobNav">
   <button class="mob-close" onclick="closeMob()">×</button>
   <a href="index.html" onclick="closeMob()" class="active">Home</a>
+  <div class="mob-dropdown">
+    <button class="mob-dropdown-toggle" onclick="toggleMobDropdown(this)">Services <svg class="mob-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="mob-dropdown-links">
+      <a href="wealth-management.html" onclick="closeMob()">Wealth Advisory</a>
+      <a href="wealth-management.html" onclick="closeMob()">Investment Advisory</a>
+      <a href="wealth-management.html" onclick="closeMob()">Financial Planning</a>
+      <a href="estate-planning.html" onclick="closeMob()">Estate Planning</a>
+      <a href="retirement-plans.html" onclick="closeMob()">Retirement Planning</a>
+      <a href="entrepreneur-solutions.html" onclick="closeMob()">Business Succession</a>
+    </div>
+  </div>
   <a href="about.html" onclick="closeMob()">About</a>
   <a href="philosophy.html" onclick="closeMob()">Philosophy</a>
   <a href="team.html" onclick="closeMob()">Team</a>
@@ -217,6 +229,17 @@
       <div class="logo-text">Maredin<span>Wealth Advisors</span></div>
     </a>
     <ul class="nav-links">
+      <li class="has-dropdown">
+        <a href="#">Services <svg class="chevron-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown">
+          <a href="wealth-management.html">Wealth Advisory</a>
+          <a href="wealth-management.html">Investment Advisory</a>
+          <a href="wealth-management.html">Financial Planning</a>
+          <a href="estate-planning.html">Estate Planning</a>
+          <a href="retirement-plans.html">Retirement Planning</a>
+          <a href="entrepreneur-solutions.html">Business Succession</a>
+        </div>
+      </li>
       <li><a href="about.html">About</a></li>
       <li><a href="philosophy.html">Philosophy</a></li>
       <li><a href="team.html">Team</a></li>
@@ -236,7 +259,7 @@
     <p class="hero-sub">Independent fiduciary wealth management for high-net-worth families and entrepreneurs, built around your vision, not our incentives.</p>
     <div class="hero-btns">
       <a href="contact.html" class="btn btn-gold">Schedule a Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
-      <a href="#what-we-do" class="btn btn-outline-light">Our Services</a>
+      <a href="#what-we-do" class="btn btn-outline-gold">Our Services</a>
     </div>
   </div>
   <div class="hero-right">
@@ -250,8 +273,7 @@
 <section class="sec" id="what-we-do">
   <div class="wrap">
     <div style="text-align:center; margin-bottom:clamp(36px,5vw,56px);">
-      <div class="label lc rev">What We Do</div>
-      <h2 class="ttl center rev d1">Built Around <em>Your Goals</em></h2>
+      <h2 class="ttl center rev">Built Around <em>Your Goals</em></h2>
     </div>
     <div class="svc-row">
       <a href="wealth-management.html" class="svc-mini rev">
@@ -307,7 +329,6 @@
         </div>
       </div>
       <div class="rev-r">
-        <div class="label">About Maredin</div>
         <h2 class="ttl">Rooted in Miami.<br><em>Built on Trust.</em></h2>
         <p class="body-t">Founded in 2005 as a boutique family office, Maredin Wealth Advisors has grown into an independent investment advisor serving high-net-worth individuals, families, and entrepreneurs across Miami and beyond.</p>
         <div class="divider"></div>
@@ -321,8 +342,7 @@
 <section class="sec">
   <div class="wrap">
     <div style="text-align:center; margin-bottom:clamp(36px,5vw,56px);">
-      <div class="label lc rev">Why Maredin</div>
-      <h2 class="ttl center rev d1">What Sets Us <em>Apart</em></h2>
+      <h2 class="ttl center rev">What Sets Us <em>Apart</em></h2>
     </div>
     <div class="values-row">
       <div class="val-item rev">
@@ -385,13 +405,12 @@
 </section>
 
 <!-- CTA -->
-<section class="sec sec-dark">
+<section class="sec sec-cta">
   <div class="wrap-xs cta-banner">
-    <div class="label lc rev" style="color:var(--gold);">Get Started</div>
-    <h2 class="rev d1">Ready to Build Your <em>Legacy?</em></h2>
-    <p class="rev d2">We work by appointment. Reach out to begin a conversation.</p>
-    <div class="rev d3" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-      <a href="contact.html" class="btn btn-outline-gold">Contact Us <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+    <h2 class="rev">Ready to Build Your <em>Legacy?</em></h2>
+    <p class="rev d1">We work by appointment. Reach out to begin a conversation.</p>
+    <div class="rev d2" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+      <a href="contact.html" class="btn btn-gold">Contact Us <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
       <a href="about.html" class="btn btn-outline-gold">Learn More</a>
     </div>
   </div>
