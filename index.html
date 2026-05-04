@@ -13,43 +13,103 @@
 /* ── Hero ── */
 .hero {
   min-height: 100svh;
-  display: flex; align-items: center; justify-content: center;
-  padding: calc(68px + clamp(48px,8vw,88px)) var(--wrap-pad) clamp(48px,7vw,80px);
-  text-align: center; position: relative; overflow: hidden; background: var(--white);
+  display: grid;
+  grid-template-columns: 54% 46%;
+  position: relative;
+  overflow: hidden;
 }
-.hero::after {
-  content: ''; position: absolute; top: 0; right: 0;
-  width: 38%; height: 100%; background: var(--cream);
-  clip-path: polygon(14% 0, 100% 0, 100% 100%, 0% 100%);
-  pointer-events: none;
+.hero-left {
+  background: var(--navy);
+  display: flex; flex-direction: column; justify-content: center;
+  padding: calc(68px + clamp(36px,5vw,64px)) clamp(28px,5vw,72px) clamp(56px,7vw,88px);
+  position: relative;
 }
-.hero-inner { position: relative; z-index: 1; max-width: 780px; }
+.hero-left::after {
+  content: '';
+  position: absolute; top: 0; bottom: 0; right: 0;
+  width: 1px; background: rgba(184,151,106,0.12);
+}
+.hero-right {
+  position: relative; overflow: hidden;
+}
+.hero-right img {
+  width: 100%; height: 100%; object-fit: cover; display: block;
+  filter: brightness(0.78) saturate(0.85);
+}
+.hero-right::before {
+  content: '';
+  position: absolute; inset: 0; z-index: 1;
+  background: linear-gradient(135deg, rgba(13,23,41,0.45) 0%, transparent 55%);
+}
+.hero-accent {
+  position: absolute; bottom: 44px; left: 36px;
+  width: 72px; height: 72px;
+  border: 1px solid rgba(184,151,106,0.35);
+  z-index: 2; pointer-events: none;
+}
+.hero-accent::after {
+  content: '';
+  position: absolute; top: 9px; left: 9px; right: -9px; bottom: -9px;
+  border: 1px solid rgba(184,151,106,0.18);
+}
 .hero-badge {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 7px 20px; border: 1px solid rgba(184,151,106,0.35);
-  border-radius: 100px; margin-bottom: clamp(24px,4vw,36px);
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 6px 16px; border: 1px solid rgba(184,151,106,0.28);
+  border-radius: 100px; margin-bottom: clamp(18px,3vw,28px); width: fit-content;
 }
-.hero-badge-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; }
-.hero-badge span { font-size: 10px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
+.hero-badge-dot { width: 5px; height: 5px; background: var(--gold); border-radius: 50%; flex-shrink: 0; }
+.hero-badge span { font-size: 9px; font-weight: 500; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); }
+.hero-line { width: 40px; height: 1px; background: var(--gold); margin-bottom: clamp(16px,2.5vw,26px); }
 .hero h1 {
-  font-family: var(--serif); font-size: clamp(40px,6vw,70px); font-weight: 300;
-  color: var(--navy); line-height: 1.12; letter-spacing: -0.3px;
-  margin-bottom: clamp(16px,3vw,24px);
+  font-family: var(--serif); font-size: clamp(38px,5vw,68px); font-weight: 300;
+  color: var(--white); line-height: 1.1; letter-spacing: -0.5px;
+  margin-bottom: clamp(14px,2vw,22px);
 }
-.hero h1 em { font-style: italic; color: var(--gold); }
+.hero h1 em { font-style: italic; color: var(--gold); display: block; }
 .hero-sub {
-  font-size: clamp(15px,1.9vw,17px); font-weight: 300; color: var(--text-mid);
-  line-height: 1.85; max-width: 540px; margin: 0 auto clamp(32px,5vw,44px);
+  font-size: clamp(14px,1.65vw,16px); font-weight: 300;
+  color: rgba(255,255,255,0.58); line-height: 1.9;
+  max-width: 400px; margin-bottom: clamp(28px,4vw,44px);
 }
-.hero-btns { display: flex; align-items: center; justify-content: center; gap: 12px; flex-wrap: wrap; }
+.hero-btns { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: clamp(36px,6vw,72px); }
+.hero-stats {
+  display: flex; align-items: center; gap: clamp(18px,3vw,40px);
+  padding-top: clamp(20px,2.5vw,32px);
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+.hero-stat-n {
+  font-family: var(--serif); font-size: clamp(22px,2.6vw,32px);
+  font-weight: 300; color: var(--white); line-height: 1;
+}
+.hero-stat-n sup { font-size: 0.55em; color: var(--gold); vertical-align: super; }
+.hero-stat-l {
+  font-size: 9px; font-weight: 500; letter-spacing: 1.5px;
+  text-transform: uppercase; color: rgba(255,255,255,0.32); margin-top: 5px;
+}
+.hero-stat-sep { width: 1px; height: 30px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
 .hero-scroll {
-  position: absolute; bottom: clamp(20px, 4vw, 40px); left: 50%; transform: translateX(-50%);
-  display: flex; flex-direction: column; align-items: center; gap: clamp(6px, 1.5vw, 10px);
-  padding: clamp(8px, 2vw, 16px) 20px; width: max-content;
+  position: absolute; bottom: clamp(20px,3vw,36px); right: clamp(20px,3vw,36px);
+  display: flex; flex-direction: column; align-items: center; gap: 8px; z-index: 3;
 }
-.hero-scroll span { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--text-lt); display: block; }
-.scroll-line { width: 1px; height: clamp(22px, 3vw, 32px); background: linear-gradient(to bottom, var(--gold), transparent); animation: pulse 2s ease infinite; }
+.hero-scroll span { font-size: 8px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.38); }
+.scroll-line { width: 1px; height: 26px; background: linear-gradient(to bottom, var(--gold), transparent); animation: pulse 2s ease infinite; }
 @keyframes pulse { 0%,100%{opacity:.3} 50%{opacity:1} }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-right { height: 45vw; min-height: 210px; order: -1; }
+  .hero-left { padding-top: clamp(28px,5vw,48px); padding-bottom: clamp(52px,8vw,80px); }
+  .hero-left::after { display: none; }
+  .hero h1 em { display: inline; }
+  .hero-scroll { bottom: 18px; right: 18px; }
+}
+@media (max-width: 560px) {
+  .hero-btns { flex-direction: column; align-items: flex-start; }
+  .hero-btns .btn { width: 100%; max-width: 300px; justify-content: center; }
+  .hero-right { height: 52vw; }
+  .hero-stats { gap: 14px; }
+  .hero-stat-sep { height: 24px; }
+}
 
 /* ── Intro strip ── */
 .intro-strip {
@@ -101,6 +161,7 @@
 .testi-card {
   text-align: center; max-width: 680px; margin: 0 auto;
 }
+.testi-q  { font-family: var(--serif); font-size: 72px; color: var(--gold); line-height: 0.5; margin-bottom: 16px; opacity: 0.2; }
 .testi-t  { font-family: var(--serif); font-size: clamp(17px,2.2vw,21px); font-weight: 300; font-style: italic; color: var(--navy); line-height: 1.72; margin-bottom: 24px; }
 .testi-name { font-size: 12px; font-weight: 500; color: var(--navy); letter-spacing: 0.8px; }
 .testi-div  { width: 22px; height: 1px; background: var(--gold); margin: 10px auto; }
@@ -136,7 +197,15 @@
   <button class="mob-close" onclick="closeMob()">×</button>
   <a href="index.html" onclick="closeMob()" class="active">Home</a>
   <a href="about.html" onclick="closeMob()">About</a>
-  <a href="services.html" onclick="closeMob()">Services</a>
+  <div class="mob-dropdown">
+    <button class="mob-dropdown-toggle" onclick="toggleMobDropdown(this)">Services <svg class="mob-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="mob-dropdown-links">
+      <a href="wealth-management.html" onclick="closeMob()">Wealth Management</a>
+      <a href="retirement-plans.html" onclick="closeMob()">Retirement &amp; Qualified Plans</a>
+      <a href="estate-planning.html" onclick="closeMob()">Estate &amp; Legacy Planning</a>
+      <a href="entrepreneur-solutions.html" onclick="closeMob()">Entrepreneur Solutions</a>
+    </div>
+  </div>
   <a href="philosophy.html" onclick="closeMob()">Philosophy</a>
   <a href="team.html" onclick="closeMob()">Team</a>
   <a href="media.html" onclick="closeMob()">Media</a>
@@ -158,7 +227,15 @@
     </a>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li class="has-dropdown">
+        <a href="services.html">Services <svg class="chevron-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown">
+          <a href="wealth-management.html">Wealth Management</a>
+          <a href="retirement-plans.html">Retirement &amp; Qualified Plans</a>
+          <a href="estate-planning.html">Estate &amp; Legacy Planning</a>
+          <a href="entrepreneur-solutions.html">Entrepreneur Solutions</a>
+        </div>
+      </li>
       <li><a href="philosophy.html">Philosophy</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="media.html">Media</a></li>
@@ -172,15 +249,40 @@
 
 <!-- Hero -->
 <section class="hero">
-  <div class="hero-inner">
-    <h1>Bespoke Miami-Based<br><em>Wealth Management Firm</em></h1>
-    <p class="hero-sub">We help high-net-worth families and entrepreneurs protect, grow, and transfer their wealth — with independence, integrity, and personal attention.</p>
+  <div class="hero-left">
+    <div class="hero-badge">
+      <span class="hero-badge-dot"></span>
+      <span>Est. 2005 · Miami, Florida</span>
+    </div>
+    <div class="hero-line"></div>
+    <h1>Your Wealth.<br><em>Your Legacy.</em></h1>
+    <p class="hero-sub">Independent fiduciary wealth management for high-net-worth families and entrepreneurs — built around your vision, not our incentives.</p>
     <div class="hero-btns">
-      <a href="#what-we-do" class="btn btn-dark">Our Services <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      <a href="contact.html" class="btn btn-gold">Schedule a Consultation <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></a>
+      <a href="#what-we-do" class="btn btn-outline-light">Our Services</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-n">20<sup>+</sup></div>
+        <div class="hero-stat-l">Years of Excellence</div>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">100<sup>%</sup></div>
+        <div class="hero-stat-l">Fiduciary Always</div>
+      </div>
+      <div class="hero-stat-sep"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-n">HNW</div>
+        <div class="hero-stat-l">Families &amp; Founders</div>
+      </div>
     </div>
   </div>
-  <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
-
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1400&q=80" alt="Miami Brickell financial district">
+    <div class="hero-accent"></div>
+    <div class="hero-scroll"><span>Scroll</span><div class="scroll-line"></div></div>
+  </div>
 </section>
 
 <!-- Italic intro strip -->
@@ -198,32 +300,32 @@
       <h2 class="ttl center rev d1">Built Around <em>Your Goals</em></h2>
     </div>
     <div class="svc-row">
-      <a href="services.html" class="svc-mini rev">
+      <a href="wealth-management.html" class="svc-mini rev">
         <div class="svc-mini-icon"><svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg></div>
         <h3>Wealth Advisory</h3>
         <p>The key to ensuring all your financial and personal goals are going to be met — it's vital to seek proper guidance on your wealth.</p>
       </a>
-      <a href="services.html" class="svc-mini rev d1">
+      <a href="wealth-management.html" class="svc-mini rev d1">
         <div class="svc-mini-icon"><svg viewBox="0 0 24 24"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg></div>
         <h3>Investment Advisory</h3>
         <p>A properly structured and developed investment plan is key to ensuring that your investment objectives and goals are met or exceeded.</p>
       </a>
-      <a href="services.html" class="svc-mini rev d2">
+      <a href="wealth-management.html" class="svc-mini rev d2">
         <div class="svc-mini-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg></div>
         <h3>Financial Planning</h3>
         <p>A comprehensive Financial Plan provides a clear pathway and gives you confidence in your financial future.</p>
       </a>
-      <a href="services.html" class="svc-mini rev d3">
+      <a href="estate-planning.html" class="svc-mini rev d3">
         <div class="svc-mini-icon"><svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg></div>
         <h3>Estate Planning</h3>
         <p>It's important to have a well designed estate plan to give you confidence that your family, business, and legacy will be protected.</p>
       </a>
-      <a href="services.html" class="svc-mini rev d1">
+      <a href="retirement-plans.html" class="svc-mini rev d1">
         <div class="svc-mini-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg></div>
         <h3>Retirement Planning</h3>
         <p>It's important to start planning today to help ensure you meet your retirement goals and be certain you don't outlive your resources.</p>
       </a>
-      <a href="services.html" class="svc-mini rev d2">
+      <a href="entrepreneur-solutions.html" class="svc-mini rev d2">
         <div class="svc-mini-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg></div>
         <h3>Business Succession</h3>
         <p>Planning for the selling or transferring of a business is an important factor to plan for, to ensure your ultimate goals are attained.</p>
@@ -311,11 +413,12 @@
 <!-- Testimonial -->
 <section class="sec sec-cream">
   <div class="wrap-sm">
-    <div class="testi-card rev">
+    <div class=”testi-card rev”>
+      <div class=”testi-q”>&ldquo;</div>
       <p class=”testi-t”>What makes Maredin unique is Marcelo's personal attention, understanding, and advocacy for your specific situation. He genuinely cares about your life and wellbeing — and offers recommendations tailored to reach your life goals.</p>
-      <div class="testi-name">Cindy G.</div>
-      <div class="testi-div"></div>
-      <div class="testi-role">Client</div>
+      <div class=”testi-name”>Cindy G.</div>
+      <div class=”testi-div”></div>
+      <div class=”testi-role”>Client</div>
     </div>
   </div>
 </section>
@@ -342,7 +445,10 @@
       </div>
       <nav class="footer-nav">
         <a href="about.html">About</a>
-        <a href="services.html">Services</a>
+        <a href="wealth-management.html">Wealth Management</a>
+        <a href="retirement-plans.html">Retirement Plans</a>
+        <a href="estate-planning.html">Estate Planning</a>
+        <a href="entrepreneur-solutions.html">Entrepreneur Solutions</a>
         <a href="philosophy.html">Philosophy</a>
         <a href="team.html">Team</a>
         <a href="media.html">Media</a>
