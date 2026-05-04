@@ -37,6 +37,10 @@
   // ── Mobile nav ──
   window.openMob  = () => document.getElementById('mobNav')?.classList.add('open');
   window.closeMob = () => document.getElementById('mobNav')?.classList.remove('open');
+  window.toggleMobDropdown = (btn) => {
+    btn.classList.toggle('open');
+    btn.nextElementSibling.classList.toggle('open');
+  };
 
   // ── Smooth scroll for anchor links ──
   document.querySelectorAll('a[href^="#"]').forEach(a => {

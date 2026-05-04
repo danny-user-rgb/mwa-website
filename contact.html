@@ -60,7 +60,15 @@
   <button class="mob-close" onclick="closeMob()">&times;</button>
   <a href="index.html" onclick="closeMob()">Home</a>
   <a href="about.html" onclick="closeMob()">About</a>
-  <a href="services.html" onclick="closeMob()">Services</a>
+  <div class="mob-dropdown">
+    <button class="mob-dropdown-toggle" onclick="toggleMobDropdown(this)">Services <svg class="mob-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></button>
+    <div class="mob-dropdown-links">
+      <a href="wealth-management.html" onclick="closeMob()">Wealth Management</a>
+      <a href="retirement-plans.html" onclick="closeMob()">Retirement &amp; Qualified Plans</a>
+      <a href="estate-planning.html" onclick="closeMob()">Estate &amp; Legacy Planning</a>
+      <a href="entrepreneur-solutions.html" onclick="closeMob()">Entrepreneur Solutions</a>
+    </div>
+  </div>
   <a href="philosophy.html" onclick="closeMob()">Philosophy</a>
   <a href="team.html" onclick="closeMob()">Team</a>
   <a href="media.html" onclick="closeMob()">Media</a>
@@ -75,7 +83,15 @@
     </a>
     <ul class="nav-links">
       <li><a href="about.html">About</a></li>
-      <li><a href="services.html">Services</a></li>
+      <li class="has-dropdown">
+        <a href="services.html">Services <svg class="chevron-icon" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></a>
+        <div class="dropdown">
+          <a href="wealth-management.html">Wealth Management</a>
+          <a href="retirement-plans.html">Retirement &amp; Qualified Plans</a>
+          <a href="estate-planning.html">Estate &amp; Legacy Planning</a>
+          <a href="entrepreneur-solutions.html">Entrepreneur Solutions</a>
+        </div>
+      </li>
       <li><a href="philosophy.html">Philosophy</a></li>
       <li><a href="team.html">Team</a></li>
       <li><a href="media.html">Media</a></li>
@@ -186,9 +202,15 @@
         <p class="footer-tagline">Independent fiduciary wealth management. Miami, Florida.</p>
       </div>
       <nav class="footer-nav">
-        <a href="about.html">About</a><a href="services.html">Services</a>
-        <a href="philosophy.html">Philosophy</a><a href="team.html">Team</a>
-        <a href="media.html">Media</a><a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+        <a href="wealth-management.html">Wealth Management</a>
+        <a href="retirement-plans.html">Retirement Plans</a>
+        <a href="estate-planning.html">Estate Planning</a>
+        <a href="entrepreneur-solutions.html">Entrepreneur Solutions</a>
+        <a href="philosophy.html">Philosophy</a>
+        <a href="team.html">Team</a>
+        <a href="media.html">Media</a>
+        <a href="contact.html">Contact</a>
       </nav>
       <div class="footer-contact">
         <a href="tel:3057735308">305-773-5308</a>
