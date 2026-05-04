@@ -90,7 +90,8 @@ body {
   padding: 8px 18px !important; border: 1px solid var(--gold) !important;
   color: var(--gold) !important; transition: all 0.25s !important;
 }
-.nav-cta:hover, .nav-cta:active, .nav-cta.active { background: var(--gold) !important; color: var(--navy) !important; }
+.nav-cta:hover, .nav-cta:active { background: var(--gold) !important; color: transparent !important; }
+.nav-cta.active { background: var(--gold) !important; color: var(--white) !important; }
 .nav-cta::after, .nav-cta.active::after { display: none !important; }
 
 /* Dropdown */
@@ -188,6 +189,7 @@ body {
 .sec-alt { background: var(--off-white); }
 .sec-dark { background: var(--navy); }
 .sec-cream { background: var(--cream); }
+.sec-cta { background: var(--off-white); }
 
 .label {
   display: flex; align-items: center; gap: 10px;
